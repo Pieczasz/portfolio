@@ -6,6 +6,7 @@ import { type Metadata } from "next";
 import { TRPCReactProvider } from "@/trpc/react";
 import Header from "@/components/Header";
 import PageTransitionWrapper from "@/components/PageTransitionWrapper";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Piekarz",
@@ -25,6 +26,7 @@ export default function RootLayout({
           <PageTransitionWrapper>
             <main>{children}</main>
           </PageTransitionWrapper>
+          <Footer />
         </TRPCReactProvider>
       </body>
     </html>

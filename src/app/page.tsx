@@ -1,7 +1,10 @@
 "use client";
 
+// Components
 import Hero from "@/components/Hero";
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
+import MyProjects from "@/components/MyProjects";
+
 // Framer motion
 import { motion } from "framer-motion";
 
@@ -16,6 +19,7 @@ export default function Home() {
       <MaxWidthWrapper>
         <Hero />
       </MaxWidthWrapper>
+      <MyProjects />
     </motion.div>
   );
 }

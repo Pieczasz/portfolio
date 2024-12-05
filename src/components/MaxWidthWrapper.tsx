@@ -1,5 +1,7 @@
+// Types
 import type { ReactNode } from "react";
 
+// Interfaces
 interface MaxWidthWrapperProps {
   children: ReactNode;
 }
