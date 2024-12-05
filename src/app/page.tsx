@@ -1,5 +1,6 @@
 "use client";
 
+import Hero from "@/components/Hero";
 // Framer motion
 import { motion } from "framer-motion";
 
@@ -10,6 +11,8 @@ export default function Home() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3 }}
       className="container mx-auto px-4"
-    ></motion.div>
+    >
+      <Hero />
+    </motion.div>
   );
 }
