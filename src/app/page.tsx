@@ -1,6 +1,7 @@
 "use client";
 
 import Hero from "@/components/Hero";
+import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 // Framer motion
 import { motion } from "framer-motion";
 
@@ -12,7 +13,9 @@ export default function Home() {
       transition={{ duration: 0.3 }}
       className="container mx-auto px-4"
     >
-      <Hero />
+      <MaxWidthWrapper>
+        <Hero />
+      </MaxWidthWrapper>
     </motion.div>
   );
 }
