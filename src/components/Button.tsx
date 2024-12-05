@@ -12,7 +12,7 @@ const Button = ({ text, href }: { text: string; href: string }) => {
         whileHover="hover"
       >
         <motion.div
-          className="absolute inset-0 bg-green-500"
+          className="absolute inset-0 bg-[#57A464]"
           initial={{ clipPath: "circle(0% at -4% 100%)" }}
           variants={{
             hover: { clipPath: "circle(170% at 27% 65%)" },

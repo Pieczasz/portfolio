@@ -37,23 +37,23 @@ const MyProjects = () => {
 
   const variants = {
     container: {
-      initial: { opacity: 0 },
-      animate: {
+      hidden: { opacity: 0 },
+      visible: {
         opacity: 1,
         transition: {
-          staggerChildren: 0.1,
-          delayChildren: 0.2,
+          staggerChildren: 0.2,
+          delayChildren: 0.1,
         },
       },
     },
     item: {
-      initial: { opacity: 0, y: 20 },
-      animate: {
+      hidden: { opacity: 0, y: 30 },
+      visible: {
         opacity: 1,
         y: 0,
         transition: {
           duration: 0.8,
-          ease: [0.2, 1, 0.4, 1],
+          ease: [0.2, 0.65, 0.3, 0.9],
         },
       },
     },
@@ -101,8 +101,9 @@ const MyProjects = () => {
   return (
     <motion.div
       variants={variants.container}
-      initial="initial"
-      animate="animate"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-100px" }}
       className="flex flex-col gap-y-6"
     >
       <div className="flex w-full max-w-5xl items-start">
@@ -134,22 +135,26 @@ const MyProjects = () => {
                 scale: hoveredId === project.id ? 0.95 : 1,
                 rotateX: hoveredId === project.id ? -180 : 0,
               }}
-              transition={{ 
-                duration: 0.4, 
-                ease: "easeOut" 
+              transition={{
+                duration: 0.4,
+                ease: "easeOut",
               }}
             >
               {/* Front of card */}
-              <div
-                className={`mx-auto my-9 flex max-w-3xl items-center justify-between`}
-              >
+              <div className="mx-auto my-9 flex max-w-3xl flex-col space-y-4 px-4 sm:flex-row sm:items-center sm:justify-between sm:space-y-0 sm:px-6">
                 <div className="flex flex-col items-start">
-                  <h3 className="text-3xl font-semibold">{project.title}</h3>
-                  <h6 className="text-lg">{project.year}</h6>
+                  <h3 className="text-2xl font-semibold sm:text-3xl">
+                    {project.title}
+                  </h3>
+                  <h6 className="text-base sm:text-lg">{project.year}</h6>
                 </div>
                 <div className="flex flex-col items-start">
-                  <h5 className="text-xl font-medium">{project.role}</h5>
-                  <p className="text-base font-light">{project.tech}</p>
+                  <h5 className="text-lg font-medium sm:text-xl">
+                    {project.role}
+                  </h5>
+                  <p className="text-sm font-light sm:text-base">
+                    {project.tech}
+                  </p>
                 </div>
               </div>
             </motion.div>
@@ -160,9 +165,9 @@ const MyProjects = () => {
                 className="backface-hidden absolute inset-0"
                 initial={{ opacity: 0, scale: 0.95, rotateX: 180 }}
                 animate={{ opacity: 1, scale: 1, rotateX: 0 }}
-                transition={{ 
-                  duration: 0.4, 
-                  ease: "easeOut"
+                transition={{
+                  duration: 0.4,
+                  ease: "easeOut",
                 }}
               >
                 <div className="flex h-full items-center justify-center p-6">

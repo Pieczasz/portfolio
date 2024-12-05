@@ -4,6 +4,7 @@
 import Hero from "@/components/Hero";
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import MyProjects from "@/components/MyProjects";
+import Technologies from "@/components/Technologies";
 
 // Framer motion
 import { motion } from "framer-motion";
@@ -18,6 +19,9 @@ export default function Home() {
     >
       <MaxWidthWrapper>
         <Hero />
+      </MaxWidthWrapper>
+      <MaxWidthWrapper>
+        <Technologies />
       </MaxWidthWrapper>
       <MyProjects />
     </motion.div>
