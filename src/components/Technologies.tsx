@@ -33,7 +33,7 @@ const technologies = [
   },
   {
     name: "tRPC",
-    icon: "/tRPC.svg",
+    icon: "/trpc.svg",
     description: "End-to-end typesafe APIs for full-stack applications",
   },
   {
