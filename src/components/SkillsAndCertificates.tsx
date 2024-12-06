@@ -215,10 +215,11 @@ const SkillsAndCertificates = () => {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
+        className="flex flex-col items-center"
       >
         <motion.h2
           variants={variants.item}
-          className="mb-8 text-center text-3xl font-bold text-[#57A464] sm:mb-12 sm:text-4xl"
+          className="mb-8 text-3xl font-bold text-[#57A464] sm:mb-12 sm:text-4xl"
         >
           My Skills <span className="text-black">&</span>
           <span className="text-[#D9B03E]"> Certificates</span>

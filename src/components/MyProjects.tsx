@@ -174,7 +174,7 @@ const MyProjects = () => {
                   <h3 className="text-2xl font-semibold sm:text-3xl">
                     {project.title}
                   </h3>
-                  <h6 className="text-base sm:text-lg">{project.year}</h6>
+                  <p className="text-base sm:text-lg">{project.year}</p>
                 </div>
                 <div className="flex flex-col items-start">
                   <h5 className="text-lg font-medium sm:text-xl">

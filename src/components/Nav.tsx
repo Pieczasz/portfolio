@@ -99,7 +99,7 @@ const Nav: FC<NavProps> = ({ containerStyles, isMobile }) => {
           <Link href={link.path} className={baseClasses.link}>
             <motion.div
               className={`${baseClasses.button} ${
-                link.path === path ? "bg-[#57A464]/10" : "hover:bg-gray-100"
+                link.path === path ? "bg-[#3B955B]/10" : "hover:bg-gray-100"
               } ${isMobile ? "text-center" : ""}`}
               whileHover={{
                 y: -3.5,
@@ -109,7 +109,7 @@ const Nav: FC<NavProps> = ({ containerStyles, isMobile }) => {
             >
               <motion.span
                 className={`${baseClasses.text} ${
-                  link.path === path ? "text-[#57A464]" : ""
+                  link.path === path ? "text-[#3B955B]" : ""
                 } ${isMobile ? "mx-auto" : ""}`}
                 whileHover={{
                   scale: 1.05,
@@ -120,7 +120,7 @@ const Nav: FC<NavProps> = ({ containerStyles, isMobile }) => {
               </motion.span>
               {link.path === path && (
                 <motion.span
-                  className="absolute bottom-0 left-0 h-0.5 w-full bg-[#57A464]"
+                  className="absolute bottom-0 left-0 h-0.5 w-full bg-[#3B955B]"
                   layoutId={isMobile ? "mobileUnderline" : "desktopUnderline"}
                   transition={{ type: "spring", stiffness: 380, damping: 30 }}
                 />
