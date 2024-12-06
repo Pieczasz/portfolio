@@ -3,7 +3,7 @@ import Button from "./Button";
 
 // Functions
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 // Framer motion
 import { motion } from "framer-motion";
@@ -11,12 +11,34 @@ import { motion } from "framer-motion";
 const MyProjects = () => {
   const [hoveredId, setHoveredId] = useState<number | null>(null);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [isHovering, setIsHovering] = useState(false);
+  const [isScrolling, setIsScrolling] = useState(false);
+
+  useEffect(() => {
+    let scrollTimer: NodeJS.Timeout;
+
+    const handleScroll = () => {
+      setIsScrolling(true);
+      clearTimeout(scrollTimer);
+
+      scrollTimer = setTimeout(() => {
+        setIsScrolling(false);
+      }, 150); // Wait 150ms after scroll ends
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      clearTimeout(scrollTimer);
+    };
+  }, []);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
     setMousePosition({
       x: e.clientX - rect.left,
-      y: e.clientY - rect.top,
+      y: e.clientY - rect.top + window.scrollY,
     });
   };
 
@@ -121,8 +143,14 @@ const MyProjects = () => {
             key={project.id}
             variants={variants.item}
             className="perspective-1000 relative border-b-2 border-gray-200 hover:cursor-pointer"
-            onMouseEnter={() => setHoveredId(project.id)}
-            onMouseLeave={() => setHoveredId(null)}
+            onMouseEnter={() => {
+              setHoveredId(project.id);
+              setIsHovering(true);
+            }}
+            onMouseLeave={() => {
+              setHoveredId(null);
+              setIsHovering(false);
+            }}
             onMouseMove={handleMouseMove}
             onClick={() =>
               router.push(`/projects/${project.title.toLocaleLowerCase()}`)
@@ -177,12 +205,12 @@ const MyProjects = () => {
             )}
 
             {/* Read More Cursor Follower */}
-            {hoveredId === project.id && (
+            {hoveredId === project.id && isHovering && !isScrolling && (
               <motion.div
-                className="pointer-events-none fixed z-50"
+                className="pointer-events-none absolute z-50"
                 style={{
-                  left: mousePosition.x - 50, // Adjusted to center the circle
-                  top: mousePosition.y - 50, // Adjusted to center the circle
+                  left: mousePosition.x - 50,
+                  top: mousePosition.y - window.scrollY - 50,
                 }}
                 transition={{ duration: 0 }}
               >

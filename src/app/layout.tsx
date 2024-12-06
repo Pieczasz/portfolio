@@ -1,11 +1,16 @@
+// Tailwind
 import "@/styles/globals.css";
 
+// Font and metadata
 import { GeistSans } from "geist/font/sans";
 import { type Metadata } from "next";
 
+// tRPC provider and page transition wrapper
 import { TRPCReactProvider } from "@/trpc/react";
-import Header from "@/components/Header";
 import PageTransitionWrapper from "@/components/PageTransitionWrapper";
+
+// Components
+import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {

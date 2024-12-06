@@ -17,7 +17,7 @@ const technologies = [
   },
   {
     name: "TypeScript",
-    icon: "/typescript.png",
+    icon: "/typescript.svg",
     description:
       "Type-safe JavaScript that scales for reliable enterprise applications",
   },
@@ -112,7 +112,7 @@ const containerVariants = {
     opacity: 1,
     transition: {
       staggerChildren: 0.15,
-      delayChildren: 0.2,
+      delayChildren: 0.3,
     },
   },
 };
@@ -129,18 +129,33 @@ const cardVariants = {
   },
 };
 
+const titleVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+      ease: [0.2, 1, 0.4, 1],
+    },
+  },
+};
+
 const Technologies = () => {
   return (
     <div className="my-[4rem] px-4 sm:my-[7.5rem] sm:px-6">
       <motion.div
         initial="hidden"
-        whileInView="visible"
+        animate="visible" // Changed from whileInView to animate
         viewport={{ once: true }}
         variants={containerVariants}
       >
-        <h2 className="mb-8 text-center text-3xl font-bold text-[#57A464] sm:mb-12 sm:text-4xl">
+        <motion.h2
+          variants={titleVariants}
+          className="mb-8 text-center text-3xl font-bold text-[#57A464] sm:mb-12 sm:text-4xl"
+        >
           Technologies I Work With
-        </h2>
+        </motion.h2>
         <motion.div
           className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
           variants={containerVariants}
