@@ -60,16 +60,6 @@ const items = [
 ];
 
 // Variants
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.15,
-      delayChildren: 0.2,
-    },
-  },
-};
 
 const itemVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -77,6 +67,30 @@ const itemVariants = {
     opacity: 1,
     y: 0,
     transition: { duration: 0.5 },
+  },
+};
+
+const variants = {
+  container: {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.1,
+      },
+    },
+  },
+  item: {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: [0.2, 0.65, 0.3, 0.9],
+      },
+    },
   },
 };
 
@@ -197,15 +211,18 @@ const SkillsAndCertificates = () => {
   return (
     <div className="relative my-[7.5rem] flex flex-col px-4 sm:px-6">
       <motion.div
+        variants={variants.container}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        variants={containerVariants}
       >
-        <h2 className="mb-8 text-center text-3xl font-bold text-[#57A464] sm:mb-12 sm:text-4xl">
+        <motion.h2
+          variants={variants.item}
+          className="mb-8 text-center text-3xl font-bold text-[#57A464] sm:mb-12 sm:text-4xl"
+        >
           My Skills <span className="text-black">&</span>
           <span className="text-[#D9B03E]"> Certificates</span>
-        </h2>
+        </motion.h2>
 
         <div className="grid gap-8">
           {items.map((item, index) => (
