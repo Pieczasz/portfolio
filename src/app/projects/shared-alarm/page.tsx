@@ -81,18 +81,6 @@ const SharedAlarmPage = () => {
     },
   };
 
-  const screenshotVariants = {
-    offscreen: { opacity: 0, y: 50 },
-    onscreen: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.8,
-        ease: [0.2, 0.65, 0.3, 0.9],
-      },
-    },
-  };
-
   const listAnimationVariants = {
     offscreen: { opacity: 0, x: -50 },
     onscreen: (index: number) => ({
@@ -214,10 +202,7 @@ const SharedAlarmPage = () => {
             {screenshots.map((src, index) => (
               <motion.div
                 key={index}
-                variants={screenshotVariants}
-                initial="offscreen"
-                whileInView="onscreen"
-                viewport={{ once: true, margin: "-100px" }}
+                variants={variants}
                 whileHover={{ scale: 1.02 }}
                 onClick={() => setSelectedImage(src)}
                 className="w-[200px] flex-shrink-0 cursor-pointer overflow-hidden rounded-lg shadow-lg transition-shadow hover:shadow-xl"
