@@ -85,7 +85,7 @@ const MyProjects = () => {
   const projectData = [
     {
       id: 1,
-      title: "Shared Alarm",
+      title: "Shared-Alarm",
       year: "2025",
       role: "Development & UI / UX Design",
       tech: "React Native (Expo), Supabase, Native Wind",

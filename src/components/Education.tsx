@@ -31,9 +31,12 @@ const Education = () => {
       whileInView="whileInView"
       viewport={{ once: true, margin: "-100px" }}
       variants={variants}
-      className="my-16"
+      className="flex flex-col gap-y-6"
     >
-      <motion.h2 variants={variants} className="mb-8 text-4xl font-bold">
+      <motion.h2
+        variants={variants}
+        className="w-full text-center text-3xl font-bold text-[#57A464] md:text-left md:text-4xl"
+      >
         Education
       </motion.h2>
       <motion.div variants={variants} className="space-y-6">

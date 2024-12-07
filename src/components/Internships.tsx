@@ -81,10 +81,10 @@ const Internship = () => {
           className="rounded-lg border p-4 md:p-6"
         >
           <h3 className="text-lg font-semibold md:text-xl">
-            Computer Hardware Technician Intern - Faro, Portugal
+            Computer Hardware Technician Intern - Faro, Portugal (Erasmus+)
           </h3>
           <p className="text-sm text-gray-600 md:text-base">
-            May 2023 - May 2023
+            May 2023 - May 2023 | International Internship - Erasmus+ Program
           </p>
           <ul className="mt-4 list-disc space-y-2 pl-6">
             <li>
