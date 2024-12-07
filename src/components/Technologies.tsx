@@ -1,5 +1,10 @@
-import { useState } from "react";
+// Components
 import Image from "next/image";
+
+// Functions
+import { useState } from "react";
+
+// Framer motion
 import { motion } from "framer-motion";
 
 const technologies = [
@@ -146,7 +151,7 @@ const Technologies = () => {
     <div className="my-[4rem] px-4 sm:my-[7.5rem] sm:px-6">
       <motion.div
         initial="hidden"
-        animate="visible" // Changed from whileInView to animate
+        animate="visible"
         viewport={{ once: true }}
         variants={containerVariants}
       >
