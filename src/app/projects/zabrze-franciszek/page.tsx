@@ -4,25 +4,21 @@ import { useState, useEffect } from "react";
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import Image from "next/image";
 import Link from "next/link";
-import { Github, Link2, X } from "lucide-react";
+import { Github, Link2, X, Lock } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
-  SiNextdotjs,
   SiTypescript,
   SiTailwindcss,
   SiPostgresql,
-  SiSupabase,
-  SiTrpc,
-  SiShadcnui,
-  SiDrizzle,
-  SiHeroku,
   SiReact,
-  SiFigma,
-  SiStripe,
   SiZod,
+  SiNextdotjs,
+  SiShadcnui,
+  SiVercel,
+  SiPrisma,
 } from "react-icons/si";
 
-const CleanupHubPage = () => {
+const ZabrzeFranciszekPage = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   useEffect(() => {
@@ -115,38 +111,34 @@ const CleanupHubPage = () => {
   };
 
   const screenshots = [
-    "/cleanuphub/cleanuphub_map.jpg",
-    "/cleanuphub/cleanuphub_event_creation.jpg",
-    "/cleanuphub/cleanuphub_event_page.jpg",
-    "/cleanuphub/cleanuphub_profile.jpg",
+    "/zabrze-franciszek/zabrze_franciszek_page.jpg",
+    "/zabrze-franciszek/zabrze_franciszek_posts.jpg",
+    "/zabrze-franciszek/zabrze_franciszek_post_creation.jpg",
+    "/zabrze-franciszek/zabrze_franciszek_users.jpg",
   ];
 
   const techStack = [
     {
       label: "Frontend",
-      stack: "Next.js, React, TypeScript, Tailwind CSS, Shadcn/ui, Figma",
+      stack: "Next.js, React, TypeScript, Tailwind CSS, Shadcn/ui",
       icons: [
         { icon: SiNextdotjs, color: "text-black" },
         { icon: SiReact, color: "text-blue-400" },
         { icon: SiTypescript, color: "text-blue-600" },
         { icon: SiTailwindcss, color: "text-cyan-500" },
         { icon: SiShadcnui, color: "text-black" },
-        { icon: SiFigma, color: "text-purple-500" },
       ],
     },
     {
       label: "Backend",
       stack:
-        "Next.js API routes, Zod, Supabase, Drizzle, PostgreSQL, tRPC, Heroku, Stripe, NextAuth",
+        "Next.js API routes, Zod, Prisma, PostgreSQL (On serverless neon.tech), Vercel",
       icons: [
         { icon: SiNextdotjs, color: "text-black" },
         { icon: SiZod, color: "text-blue-800" },
-        { icon: SiSupabase, color: "text-green-600" },
-        { icon: SiDrizzle, color: "text-green-400" },
+        { icon: SiPrisma, color: "text-slate-800" },
         { icon: SiPostgresql, color: "text-slate-800" },
-        { icon: SiTrpc, color: "text-blue-600" },
-        { icon: SiHeroku, color: "text-purple-600" },
-        { icon: SiStripe, color: "text-blue-600" },
+        { icon: SiVercel, color: "text-black" },
       ],
     },
   ];
@@ -161,57 +153,76 @@ const CleanupHubPage = () => {
       >
         <motion.div variants={variants} className="flex items-center gap-4">
           <Image
-            src="/CleanupHubLogo.png"
-            alt="CleanupHub Logo"
+            src="/zabrze_franciszek_logo.png"
+            alt="Zabrze Franciszek Logo"
             width={64}
             height={64}
             className="rounded-lg"
           />
           <motion.h1 variants={variants} className="text-5xl font-bold">
-            CleanupHub
+            Zabrze Franciszek
           </motion.h1>
         </motion.div>
 
         <motion.div variants={variants} className="mt-16 flex gap-4">
           <motion.div variants={linkVariants} whileHover="hover" whileTap="tap">
             <Link
-              href="https://cleanuphub.live"
+              href="https://franciszek.vercel.app/"
               target="_blank"
-              className="flex items-center gap-2 rounded-lg bg-[#57A464] px-4 py-2 text-white transition-colors hover:bg-[#478553]"
+              className="flex items-center gap-2 rounded-lg bg-[#303030] px-4 py-2 text-white transition-colors hover:bg-black"
             >
               <Link2 size={20} />
               <span>Visit Website</span>
             </Link>
           </motion.div>
-          <motion.div variants={linkVariants} whileHover="hover" whileTap="tap">
-            <Link
-              href="https://github.com/Pieczasz/cleanup-hub"
-              target="_blank"
-              className="flex items-center gap-2 rounded-lg border border-[#57A464] px-4 py-2 text-[#57A464] transition-colors hover:bg-[#57A464] hover:text-white"
-            >
+          <motion.div
+            variants={linkVariants}
+            whileHover="hover"
+            whileTap="tap"
+            onClick={(e) => {
+              e.preventDefault();
+              const lockElement = e.currentTarget.querySelector(".lock-icon");
+              if (lockElement) {
+                const motionLock = lockElement as HTMLElement;
+                motionLock.style.transform = "rotate(0deg)";
+                motionLock.animate(
+                  [
+                    { transform: "rotate(0deg)" },
+                    { transform: "rotate(-10deg)" },
+                    { transform: "rotate(10deg)" },
+                    { transform: "rotate(-10deg)" },
+                    { transform: "rotate(10deg)" },
+                    { transform: "rotate(0deg)" },
+                  ],
+                  {
+                    duration: 500,
+                    easing: "ease-in-out",
+                  },
+                );
+              }
+            }}
+          >
+            <div className="flex cursor-not-allowed items-center gap-2 rounded-lg border border-gray-400 px-4 py-2 text-gray-600">
               <Github size={20} />
               <span>Source</span>
-            </Link>
+              <Lock className="lock-icon ml-1" size={16} />
+            </div>
           </motion.div>
         </motion.div>
 
-        <motion.section
-          variants={variants}
-          viewport={{ once: true }}
-          className="mt-16 space-y-4"
-        >
+        <motion.section variants={variants} className="mt-16 space-y-4">
           <motion.h2
             variants={variants}
-            className="text-4xl font-bold text-[#57A464]"
+            className="text-4xl font-bold text-[#303030]"
           >
             Project overview
           </motion.h2>
           <motion.p variants={variants} className="text-lg">
-            CleanupHub is a comprehensive platform designed to connect
-            environmental enthusiasts with local cleanup initiatives. The
-            platform serves as a central hub for organizing and participating in
-            community-driven environmental actions, making it easier than ever
-            for people to make a positive impact on their local environment.
+            Zabrze-Franciszek is a website for my local church parish in Zabrze.
+            The website is a simple CMS system that allows priests to create,
+            edit, and delete posts. They can also add and manage user accounts
+            with different roles and permissions. For example charity members.
+            And they can edit their own subpages.
           </motion.p>
         </motion.section>
 
@@ -230,7 +241,7 @@ const CleanupHubPage = () => {
               >
                 <Image
                   src={src}
-                  alt={`CleanupHub Screenshot ${index + 1}`}
+                  alt={`Zabrze Franciszek Screenshot ${index + 1}`}
                   width={800}
                   height={450}
                   className="w-full"
@@ -239,20 +250,17 @@ const CleanupHubPage = () => {
             ))}
           </div>
         </motion.section>
-
+        {/* Key Features section */}
         <motion.section className="mt-16 space-y-4">
-          <motion.h2 className="text-3xl font-semibold text-[#57A464]">
+          <motion.h2 className="text-3xl font-semibold text-[#303030]">
             Key Features
           </motion.h2>
           <ul className="list-inside list-disc space-y-2 text-lg">
             {[
-              "Real-time mapping of cleanup events and activities",
-              "User authentication and profile management",
-              "Event creation and management tools",
-              "Donation feature to support local initiatives",
-              "Impact metrics and progress tracking",
-              "Gamification elements to encourage participation",
-              "Mobile-responsive design for on-the-go access",
+              "Creating, editing, and deleting posts",
+              "Creating and managing user accounts roles and permissions",
+              "All of the websites are editable for admin users",
+              "Accessability and minimalisttic, responsive design",
             ].map((item, index) => (
               <motion.li
                 key={index}
@@ -271,7 +279,7 @@ const CleanupHubPage = () => {
         <motion.section variants={variants} className="mt-16 space-y-4">
           <motion.h2
             variants={variants}
-            className="text-3xl font-semibold text-[#57A464]"
+            className="text-3xl font-semibold text-[#303030]"
           >
             Tech Stack
           </motion.h2>
@@ -307,7 +315,7 @@ const CleanupHubPage = () => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setSelectedImage(null)}
-              className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4"
+              className="fixed inset-0 z-50 flex items-center justify-center bg-[#303030]/80 p-4"
             >
               <motion.div
                 initial={{ scale: 0.9 }}
@@ -340,4 +348,4 @@ const CleanupHubPage = () => {
   );
 };
 
-export default CleanupHubPage;
+export default ZabrzeFranciszekPage;

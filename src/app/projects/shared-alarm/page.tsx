@@ -3,26 +3,18 @@
 import { useState, useEffect } from "react";
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import Image from "next/image";
-import Link from "next/link";
-import { Github, Link2, X } from "lucide-react";
+import { Github, Link2, X, Lock } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
-  SiNextdotjs,
   SiTypescript,
   SiTailwindcss,
   SiPostgresql,
   SiSupabase,
-  SiTrpc,
-  SiShadcnui,
-  SiDrizzle,
-  SiHeroku,
   SiReact,
   SiFigma,
-  SiStripe,
-  SiZod,
 } from "react-icons/si";
 
-const CleanupHubPage = () => {
+const SharedAlarmPage = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   useEffect(() => {
@@ -115,38 +107,29 @@ const CleanupHubPage = () => {
   };
 
   const screenshots = [
-    "/cleanuphub/cleanuphub_map.jpg",
-    "/cleanuphub/cleanuphub_event_creation.jpg",
-    "/cleanuphub/cleanuphub_event_page.jpg",
-    "/cleanuphub/cleanuphub_profile.jpg",
+    "/shared-alarm/shared_alarm_creation.jpg",
+    "/shared-alarm/shared_alarm_clock.jpg",
+    "/shared-alarm/shared_alarm_stopwatch.jpg",
+    "/shared-alarm/shared_alarm_timer.jpg",
   ];
 
   const techStack = [
     {
       label: "Frontend",
-      stack: "Next.js, React, TypeScript, Tailwind CSS, Shadcn/ui, Figma",
+      stack: "React Native (Expo), TypeScript, Tailwind CSS, Figma",
       icons: [
-        { icon: SiNextdotjs, color: "text-black" },
         { icon: SiReact, color: "text-blue-400" },
         { icon: SiTypescript, color: "text-blue-600" },
         { icon: SiTailwindcss, color: "text-cyan-500" },
-        { icon: SiShadcnui, color: "text-black" },
         { icon: SiFigma, color: "text-purple-500" },
       ],
     },
     {
       label: "Backend",
-      stack:
-        "Next.js API routes, Zod, Supabase, Drizzle, PostgreSQL, tRPC, Heroku, Stripe, NextAuth",
+      stack: "Supabase, PostgreSQL",
       icons: [
-        { icon: SiNextdotjs, color: "text-black" },
-        { icon: SiZod, color: "text-blue-800" },
         { icon: SiSupabase, color: "text-green-600" },
-        { icon: SiDrizzle, color: "text-green-400" },
         { icon: SiPostgresql, color: "text-slate-800" },
-        { icon: SiTrpc, color: "text-blue-600" },
-        { icon: SiHeroku, color: "text-purple-600" },
-        { icon: SiStripe, color: "text-blue-600" },
       ],
     },
   ];
@@ -159,64 +142,75 @@ const CleanupHubPage = () => {
         variants={variants}
         className="py-16"
       >
+        {/* Title section */}
         <motion.div variants={variants} className="flex items-center gap-4">
           <Image
-            src="/CleanupHubLogo.png"
-            alt="CleanupHub Logo"
+            src="/shared_alarm_logo.png"
+            alt="Shared Alarm Logo"
             width={64}
             height={64}
             className="rounded-lg"
           />
           <motion.h1 variants={variants} className="text-5xl font-bold">
-            CleanupHub
+            Shared Alarm
           </motion.h1>
+        </motion.div>
+
+        {/* Add notice banner */}
+        <motion.div
+          variants={variants}
+          className="mt-8 rounded-lg border border-yellow-200 bg-yellow-50 p-4"
+        >
+          <p className="text-yellow-800">
+            🚧 This app is currently under development and not yet available for
+            download. Stay tuned for updates!
+          </p>
         </motion.div>
 
         <motion.div variants={variants} className="mt-16 flex gap-4">
           <motion.div variants={linkVariants} whileHover="hover" whileTap="tap">
-            <Link
-              href="https://cleanuphub.live"
-              target="_blank"
-              className="flex items-center gap-2 rounded-lg bg-[#57A464] px-4 py-2 text-white transition-colors hover:bg-[#478553]"
-            >
+            <div className="flex cursor-not-allowed items-center gap-2 rounded-lg bg-gray-400 px-4 py-2 text-white">
               <Link2 size={20} />
-              <span>Visit Website</span>
-            </Link>
+              <span>Coming Soon</span>
+            </div>
           </motion.div>
-          <motion.div variants={linkVariants} whileHover="hover" whileTap="tap">
-            <Link
-              href="https://github.com/Pieczasz/cleanup-hub"
-              target="_blank"
-              className="flex items-center gap-2 rounded-lg border border-[#57A464] px-4 py-2 text-[#57A464] transition-colors hover:bg-[#57A464] hover:text-white"
-            >
+          <motion.div
+            variants={linkVariants}
+            whileHover="hover"
+            whileTap="tap"
+            onClick={(e) => {
+              e.preventDefault();
+              const lockElement = e.currentTarget.querySelector(".lock-icon");
+              if (lockElement) {
+                const motionLock = lockElement as HTMLElement;
+                motionLock.style.transform = "rotate(0deg)";
+                motionLock.animate(
+                  [
+                    { transform: "rotate(0deg)" },
+                    { transform: "rotate(-10deg)" },
+                    { transform: "rotate(10deg)" },
+                    { transform: "rotate(-10deg)" },
+                    { transform: "rotate(10deg)" },
+                    { transform: "rotate(0deg)" },
+                  ],
+                  {
+                    duration: 500,
+                    easing: "ease-in-out",
+                  },
+                );
+              }
+            }}
+          >
+            <div className="flex cursor-not-allowed items-center gap-2 rounded-lg border border-gray-400 px-4 py-2 text-gray-600">
               <Github size={20} />
               <span>Source</span>
-            </Link>
+              <Lock className="lock-icon ml-1" size={16} />
+            </div>
           </motion.div>
         </motion.div>
 
-        <motion.section
-          variants={variants}
-          viewport={{ once: true }}
-          className="mt-16 space-y-4"
-        >
-          <motion.h2
-            variants={variants}
-            className="text-4xl font-bold text-[#57A464]"
-          >
-            Project overview
-          </motion.h2>
-          <motion.p variants={variants} className="text-lg">
-            CleanupHub is a comprehensive platform designed to connect
-            environmental enthusiasts with local cleanup initiatives. The
-            platform serves as a central hub for organizing and participating in
-            community-driven environmental actions, making it easier than ever
-            for people to make a positive impact on their local environment.
-          </motion.p>
-        </motion.section>
-
         <motion.section className="mt-16 space-y-4">
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+          <div className="mx-auto flex max-w-6xl flex-col items-center justify-center gap-4 pb-4 md:flex-row md:overflow-x-auto">
             {screenshots.map((src, index) => (
               <motion.div
                 key={index}
@@ -226,33 +220,34 @@ const CleanupHubPage = () => {
                 viewport={{ once: true, margin: "-100px" }}
                 whileHover={{ scale: 1.02 }}
                 onClick={() => setSelectedImage(src)}
-                className="cursor-pointer overflow-hidden rounded-lg shadow-lg transition-shadow hover:shadow-xl"
+                className="w-[200px] flex-shrink-0 cursor-pointer overflow-hidden rounded-lg shadow-lg transition-shadow hover:shadow-xl"
               >
                 <Image
                   src={src}
-                  alt={`CleanupHub Screenshot ${index + 1}`}
-                  width={800}
-                  height={450}
+                  alt={`Shared Alarm Screenshot ${index + 1}`}
+                  width={200}
+                  height={432}
                   className="w-full"
+                  style={{ objectFit: "cover" }}
                 />
               </motion.div>
             ))}
           </div>
         </motion.section>
-
+        {/* Key Features section */}
         <motion.section className="mt-16 space-y-4">
-          <motion.h2 className="text-3xl font-semibold text-[#57A464]">
+          <motion.h2 className="text-3xl font-semibold text-[#4e81d2]">
             Key Features
           </motion.h2>
           <ul className="list-inside list-disc space-y-2 text-lg">
             {[
-              "Real-time mapping of cleanup events and activities",
-              "User authentication and profile management",
-              "Event creation and management tools",
-              "Donation feature to support local initiatives",
-              "Impact metrics and progress tracking",
-              "Gamification elements to encourage participation",
-              "Mobile-responsive design for on-the-go access",
+              "Synchronized alarms across multiple devices",
+              "Group alarm creation and management",
+              "Real-time notifications and alerts",
+              "Custom sound and vibration patterns",
+              "Sleep tracking and statistics",
+              "Social accountability features",
+              "Cross-platform compatibility",
             ].map((item, index) => (
               <motion.li
                 key={index}
@@ -271,7 +266,7 @@ const CleanupHubPage = () => {
         <motion.section variants={variants} className="mt-16 space-y-4">
           <motion.h2
             variants={variants}
-            className="text-3xl font-semibold text-[#57A464]"
+            className="text-3xl font-semibold text-[#4e81d2]"
           >
             Tech Stack
           </motion.h2>
@@ -340,4 +335,4 @@ const CleanupHubPage = () => {
   );
 };
 
-export default CleanupHubPage;
+export default SharedAlarmPage;
