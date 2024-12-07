@@ -1,10 +1,15 @@
 "use client";
 
-import { useState } from "react";
-import { motion } from "framer-motion";
-import { useRouter } from "next/navigation";
+// Components
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import Image from "next/image";
+
+// Functions
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+
+// Framer motion
+import { motion } from "framer-motion";
 
 const ProjectCard = ({
   project,
@@ -184,7 +189,7 @@ const Projects = () => {
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="mb-12 text-4xl font-bold text-[#57A464]"
+          className="mb-12 text-5xl font-bold"
         >
           All Projects
         </motion.h1>

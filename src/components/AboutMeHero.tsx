@@ -32,7 +32,7 @@ const AboutMeHero = () => {
         <div className="flex flex-col">
           <motion.h1
             variants={variants}
-            className="mb-4 text-center text-4xl font-bold md:text-left md:text-7xl"
+            className="mb-4 text-center text-3xl font-bold md:text-left md:text-5xl"
           >
             About Me
           </motion.h1>

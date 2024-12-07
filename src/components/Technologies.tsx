@@ -1,5 +1,10 @@
-import { useState } from "react";
+// Components
 import Image from "next/image";
+
+// Functions
+import { useState } from "react";
+
+// Framer motion
 import { motion } from "framer-motion";
 
 const technologies = [
