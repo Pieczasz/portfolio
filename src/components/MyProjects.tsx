@@ -1,3 +1,5 @@
+"use client";
+
 // Components
 import Button from "./Button";
 
@@ -120,6 +122,39 @@ const MyProjects = () => {
     },
   ];
 
+  const ProjectTitle = ({ title }: { title: string }) => {
+    const [isHovered, setIsHovered] = useState(false);
+
+    return (
+      <div
+        className="relative inline-block"
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
+        <h3 className="text-2xl font-semibold sm:text-3xl">{title}</h3>
+        <svg
+          className="absolute -bottom-[4px] left-0 right-0 z-20 h-[8px] w-full"
+          viewBox="0 0 400 7"
+          preserveAspectRatio="none"
+        >
+          <motion.path
+            d="M 0 4 Q 100 8 200 4 Q 300 0 400 4"
+            strokeWidth="2"
+            fill="none"
+            style={{
+              strokeDasharray: 400,
+              stroke: "#57A464",
+            }}
+            animate={{
+              strokeDashoffset: isHovered ? 0 : 400,
+            }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          />
+        </svg>
+      </div>
+    );
+  };
+
   const router = useRouter();
   return (
     <MaxWidthWrapper>
@@ -144,6 +179,7 @@ const MyProjects = () => {
             <motion.div
               key={project.id}
               variants={variants.item}
+              whileHover={{ scale: 1.02 }}
               className="perspective-1000 relative border-b-2 border-gray-200 hover:cursor-pointer"
               onMouseEnter={() => {
                 setHoveredId(project.id);
@@ -173,9 +209,7 @@ const MyProjects = () => {
                 {/* Front of card */}
                 <div className="mx-auto my-9 flex max-w-3xl flex-col space-y-4 px-4 sm:flex-row sm:items-center sm:justify-between sm:space-y-0 sm:px-6">
                   <div className="flex flex-col items-start">
-                    <h3 className="text-2xl font-semibold sm:text-3xl">
-                      {project.title}
-                    </h3>
+                    <ProjectTitle title={project.title} />
                     <p className="text-base sm:text-lg">{project.year}</p>
                   </div>
                   <div className="flex flex-col items-start">
