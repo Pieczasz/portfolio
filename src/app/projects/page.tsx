@@ -184,7 +184,7 @@ const Projects = () => {
   };
 
   return (
-    <div className="my-[7.5rem]">
+    <div className="my-[7.5rem] px-4 lg:px-0">
       <MaxWidthWrapper>
         <motion.h1
           initial={{ opacity: 0, y: 20 }}

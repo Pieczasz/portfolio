@@ -163,7 +163,7 @@ const MyProjects = () => {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
-        className="flex flex-col gap-y-6"
+        className="flex flex-col gap-y-6 px-4 lg:px-0"
       >
         <div className="flex w-full max-w-5xl items-start">
           <motion.h2

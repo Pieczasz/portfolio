@@ -38,7 +38,7 @@ const AboutMeHero = () => {
           </motion.h1>
           <motion.p
             variants={variants}
-            className="text-center text-lg md:text-left md:text-xl"
+            className="px-4 text-left text-lg md:text-xl"
           >
             I&apos;m Bartek, an 18-year-old software engineer from Poland with a
             desire for coding practical apps and websites. <br />I specialize in
