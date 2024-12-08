@@ -54,7 +54,7 @@ const Hero = () => {
       initial="initial"
       animate="animate"
       variants={variants}
-      className="my-[7.5rem] flex flex-col"
+      className="my-[7.5rem] flex flex-col px-4 md:px-0"
     >
       <motion.h1 variants={variants} className="mb-4 text-7xl font-bold">
         Hello, I&apos;m Bartek

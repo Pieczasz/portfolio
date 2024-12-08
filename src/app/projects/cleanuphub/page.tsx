@@ -145,7 +145,7 @@ const CleanupHubPage = () => {
         initial="initial"
         animate="animate"
         variants={variants}
-        className="py-16"
+        className="py-16 px-4 lg:px-0"
       >
         <motion.div variants={variants} className="flex items-center gap-4">
           <Image

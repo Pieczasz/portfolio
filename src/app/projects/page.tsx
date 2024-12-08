@@ -184,8 +184,8 @@ const Projects = () => {
   };
 
   return (
-    <MaxWidthWrapper>
-      <div className="py-16">
+    <div className="my-[7.5rem] px-4 lg:px-0">
+      <MaxWidthWrapper>
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -210,8 +210,8 @@ const Projects = () => {
             />
           ))}
         </motion.div>
-      </div>
-    </MaxWidthWrapper>
+      </MaxWidthWrapper>
+    </div>
   );
 };
 

@@ -6,7 +6,7 @@ import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 
 export default async function Home() {
   return (
-    <div className="container mx-auto px-2 md:px-4">
+    <div className="container mx-auto">
       <MaxWidthWrapper>
         <AboutMeHero />
         <Education />

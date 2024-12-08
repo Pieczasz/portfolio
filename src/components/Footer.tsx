@@ -74,7 +74,7 @@ const Footer: FC = () => {
           <span className="text-sm sm:text-base">LinkedIn</span>
         </a>
         <a
-          href="https://github.com"
+          href="https://github.com/Pieczasz"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-x-2 transition-colors hover:text-[#57A464]"
@@ -83,7 +83,7 @@ const Footer: FC = () => {
           <span>GitHub</span>
         </a>
         <a
-          href="https://upwork.com"
+          href="https://www.upwork.com/freelancers/~01b14ac855ff93d122"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-x-2 transition-colors hover:text-[#57A464]"
@@ -92,7 +92,7 @@ const Footer: FC = () => {
           <span>Upwork</span>
         </a>
         <a
-          href="https://fiverr.com"
+          href="https://www.fiverr.com/pieczasz/buying?source=avatar_menu_profile"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-x-2 transition-colors hover:text-[#57A464]"
