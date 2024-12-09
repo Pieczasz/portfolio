@@ -128,7 +128,7 @@ const Nav: FC<NavProps> = ({ containerStyles, isMobile }) => {
             <motion.div
               className={`${baseClasses.button} ${
                 link.path === path
-                  ? "bg-[#57A464]/10 dark:bg-[#57A464]/30"
+                  ? "bg-[#57A464]/[0.13] dark:bg-[#57A464]/30"
                   : "hover:bg-slate-100 dark:hover:bg-gray-800"
               } ${isMobile ? "text-center" : ""}`}
               whileHover={{
