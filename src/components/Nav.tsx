@@ -10,7 +10,6 @@ import { motion } from "framer-motion";
 
 // Types
 import type { FC } from "react";
-import { useTheme } from "@/context/ThemeContext";
 
 // Interfaces
 interface NavLink {
@@ -32,7 +31,6 @@ const links: NavLink[] = [
 
 const Nav: FC<NavProps> = ({ containerStyles, isMobile }) => {
   const path = usePathname();
-  const { theme } = useTheme();
 
   const baseClasses = {
     nav: "flex items-center gap-4",
@@ -50,37 +48,11 @@ const Nav: FC<NavProps> = ({ containerStyles, isMobile }) => {
         opacity: 0,
         x: -20,
         scale: 0.95,
-        backgroundColor: "rgba(255, 255, 255, 0)",
-        backdropFilter: "blur(0px)",
       },
       animate: {
         opacity: 1,
         x: 0,
         scale: 1,
-        backgroundColor: "rgba(255, 255, 255, 0.8)",
-        backdropFilter: "blur(8px)",
-        transition: {
-          duration: 0.7,
-          ease: [0.22, 1, 0.36, 1],
-          staggerChildren: 0.1,
-          delayChildren: 0.3,
-        },
-      },
-    },
-    dark: {
-      initial: {
-        opacity: 0,
-        x: -20,
-        scale: 0.95,
-        backgroundColor: "rgba(0, 0, 0, 0)",
-        backdropFilter: "blur(0px)",
-      },
-      animate: {
-        opacity: 1,
-        x: 0,
-        scale: 1,
-        backgroundColor: "rgba(0, 0, 0, 0.4)",
-        backdropFilter: "blur(8px)",
         transition: {
           duration: 0.7,
           ease: [0.22, 1, 0.36, 1],
@@ -109,12 +81,12 @@ const Nav: FC<NavProps> = ({ containerStyles, isMobile }) => {
 
   return (
     <motion.nav
-      variants={theme === "dark" ? variants.dark : variants.nav}
+      variants={variants.nav}
       initial="initial"
       animate="animate"
       className={`${baseClasses.nav} ${
         !isMobile
-          ? "h-12 rounded-2xl bg-white/80 px-8 shadow-lg backdrop-blur-md dark:bg-black/40 dark:shadow-black/50"
+          ? "h-12 rounded-2xl bg-white/80 px-8 shadow-lg backdrop-blur-md transition-colors duration-300 dark:bg-black/40 dark:shadow-black/50"
           : ""
       } ${containerStyles ?? ""}`}
     >

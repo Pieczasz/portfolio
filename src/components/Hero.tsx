@@ -1,11 +1,18 @@
 // Functions
 import { useState, useEffect } from "react";
+
+// Framer motion
 import { motion } from "framer-motion";
+
+// Icons
 import { FaGithub, FaEnvelope, FaLinkedin } from "react-icons/fa";
 import { TbBrandFiverr } from "react-icons/tb";
 import { SiUpwork } from "react-icons/si";
 
+import { useTheme } from "@/context/ThemeContext";
+
 const Hero = () => {
+  const { theme } = useTheme();
   const [isSmallScreen, setIsSmallScreen] = useState(true);
   const [isMounted, setIsMounted] = useState(false);
 
@@ -66,29 +73,32 @@ const Hero = () => {
     {
       icon: <FaLinkedin className="text-2xl" />,
       url: "https://www.linkedin.com/in/bart%C5%82omiej-piekarz-274b49304/",
-      color: "hover:text-[#57A464] text-black dark:text-white",
     },
     {
       icon: <FaGithub className="text-2xl" />,
       url: "https://github.com/Pieczasz",
-      color: "hover:text-[#57A464] text-black dark:text-white",
     },
     {
       icon: <SiUpwork className="text-2xl" />,
       url: "https://www.upwork.com/freelancers/~01b14ac855ff93d122",
-      color: "hover:text-[#57A464] text-black dark:text-white",
     },
     {
       icon: <TbBrandFiverr className="text-2xl" />,
       url: "https://www.fiverr.com/pieczasz",
-      color: "hover:text-[#57A464] text-black dark:text-white",
     },
     {
       icon: <FaEnvelope className="text-2xl" />,
       url: "mailto:bartekp854@gmail.com",
-      color: "hover:text-[#57A464] text-black dark:text-white",
     },
   ];
+
+  const getLinkClassName = () => {
+    return `transform transition-colors duration-200 ${
+      theme === "dark"
+        ? "text-white hover:text-[#68bf77]"
+        : "text-black hover:text-[#57A464]"
+    }`;
+  };
 
   return (
     <motion.main
@@ -120,7 +130,7 @@ const Hero = () => {
           variants={
             !isMounted || isSmallScreen ? variants : rotatedTextVariants
           }
-          className="mt-4 text-lg font-medium text-black dark:text-white sm:mb-2"
+          className="mt-4 text-lg font-medium text-black sm:mb-2 dark:text-white"
         >
           Based in{" "}
           <span className="text-[#D61C1C] dark:text-[#ff2424]">Poland</span>
@@ -137,10 +147,7 @@ const Hero = () => {
         <span className="text-[#57A464] dark:text-[#68bf77]">easy to use </span>
         apps and websites
       </motion.h4>
-      <motion.div
-        variants={variants}
-        className="mt-8 flex gap-6 text-black dark:text-white"
-      >
+      <motion.div key={theme} variants={variants} className="mt-8 flex gap-6">
         {socialLinks.map((link, index) => (
           <motion.a
             key={index}
@@ -151,7 +158,7 @@ const Hero = () => {
             href={link.url}
             target="_blank"
             rel="noopener noreferrer"
-            className={`transform text-black transition-all duration-300 hover:scale-110 dark:text-white ${link.color}`}
+            className={getLinkClassName()}
             whileHover={{ y: -2 }}
             whileTap={{ scale: 0.95 }}
           >

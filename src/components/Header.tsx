@@ -3,40 +3,64 @@
 // Components
 import Nav from "./Nav";
 import MobileNav from "./MobileNav";
+import Image from "next/image";
+import MaxWidthWrapper from "./MaxWidthWrapper";
+
+// Framer motion
+import { motion } from "framer-motion";
 
 // Functions
 import { useState } from "react";
 import { useTheme } from "@/context/ThemeContext";
+import { useRouter } from "next/navigation";
 
 // Types
 import type { FC } from "react";
-import Image from "next/image";
-import MaxWidthWrapper from "./MaxWidthWrapper";
-import { useRouter } from "next/navigation";
 
 const Header: FC = () => {
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
   const { theme, toggleTheme } = useTheme();
   const router = useRouter();
+
+  const variants = {
+    initial: { opacity: 0, y: -20 },
+    animate: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 2.4,
+        ease: [0.22, 1, 0.36, 1],
+      },
+    },
+  };
+
   return (
     <MaxWidthWrapper>
-      <div className="mt-4 flex w-full items-center justify-between">
-        <div className="text-black transition-colors duration-200 dark:text-white">
+      <div className="mt-4 flex w-full items-center justify-between px-4 lg:px-0">
+        <motion.div
+          initial="initial"
+          animate="animate"
+          variants={variants}
+          className="text-black transition-colors duration-200 dark:text-white"
+        >
           <Image
             src="/bp_logo.svg"
             alt="Logo"
             width={40}
             height={40}
-            className="h-10 w-10 dark:invert"
+            className="h-10 w-10 transition-colors duration-200 hover:cursor-pointer dark:invert"
             priority
             onClick={() => router.push("/")}
           />
-        </div>
+        </motion.div>
         <Nav containerStyles="hidden md:flex font-medium" />
 
-        <button
+        <motion.button
+          initial="initial"
+          animate="animate"
+          variants={variants}
           onClick={toggleTheme}
-          className="p-2 transition-colors hover:text-yellow-500 dark:hover:text-yellow-300"
+          className="p-2 text-black transition-colors hover:text-yellow-500 dark:text-white dark:hover:text-yellow-300"
           aria-label="Toggle dark mode"
         >
           {theme === "dark" ? (
@@ -68,11 +92,14 @@ const Header: FC = () => {
               />
             </svg>
           )}
-        </button>
+        </motion.button>
 
-        <button
+        <motion.button
+          initial="initial"
+          animate="animate"
+          variants={variants}
           onClick={() => setIsMobileNavOpen(true)}
-          className="p-2 text-gray-800 hover:text-gray-600 md:hidden dark:text-gray-200 dark:hover:text-gray-400"
+          className="p-2 text-gray-800 transition-colors duration-200 hover:text-gray-600 md:hidden dark:text-gray-200 dark:hover:text-gray-400"
         >
           <span className="sr-only">Open menu</span>
           <svg
@@ -89,7 +116,7 @@ const Header: FC = () => {
               d="M4 6h16M4 12h16M4 18h16"
             />
           </svg>
-        </button>
+        </motion.button>
 
         <MobileNav
           isOpen={isMobileNavOpen}
