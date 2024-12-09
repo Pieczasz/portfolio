@@ -128,7 +128,7 @@ const SharedAlarmPage = () => {
         initial="initial"
         animate="animate"
         variants={variants}
-        className="py-16 px-4 lg:px-0"
+        className="px-4 py-16 lg:px-0"
       >
         {/* Title section */}
         <motion.div variants={variants} className="flex items-center gap-4">
@@ -263,7 +263,7 @@ const SharedAlarmPage = () => {
               <motion.div
                 key={index}
                 variants={listItemVariants}
-                className="rounded-lg border border-gray-200 p-4 shadow-sm transition-all hover:shadow-md"
+                className="rounded-lg border border-gray-200 p-4 shadow-sm transition-all"
               >
                 <h3 className="mb-2 font-semibold">{category.label}</h3>
                 <div className="flex items-center gap-2">

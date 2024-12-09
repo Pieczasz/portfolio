@@ -276,7 +276,7 @@ const ZabrzeFranciszekPage = () => {
               <motion.div
                 key={index}
                 variants={listItemVariants}
-                className="rounded-lg border border-gray-200 p-4 shadow-sm transition-all hover:shadow-md"
+                className="rounded-lg border border-gray-200 p-4 shadow-sm transition-all"
               >
                 <h3 className="mb-2 font-semibold">{category.label}</h3>
                 <div className="flex items-center gap-2">

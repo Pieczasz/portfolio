@@ -27,7 +27,6 @@ const links: NavLink[] = [
   { path: "/projects", name: "Projects" },
   { path: "/about", name: "About Me" },
   { path: "/resume", name: "Resume" },
-  { path: "/contact", name: "Contact" },
 ];
 
 const Nav: FC<NavProps> = ({ containerStyles, isMobile }) => {
@@ -118,13 +117,6 @@ const Nav: FC<NavProps> = ({ containerStyles, isMobile }) => {
               >
                 {link.name}
               </motion.span>
-              {link.path === path && (
-                <motion.span
-                  className="absolute bottom-0 left-0 h-0.5 w-full bg-[#57A464]"
-                  layoutId={isMobile ? "mobileUnderline" : "desktopUnderline"}
-                  transition={{ type: "spring", stiffness: 380, damping: 30 }}
-                />
-              )}
             </motion.div>
           </Link>
         </motion.div>

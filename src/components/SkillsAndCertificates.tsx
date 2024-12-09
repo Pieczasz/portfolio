@@ -233,7 +233,6 @@ const SkillsAndCertificates = () => {
               className="relative grid grid-cols-1 gap-4 md:grid-cols-2"
             >
               <motion.div
-                whileHover={{ scale: 1.02 }}
                 className={`max-w-md rounded-xl border border-white/10 bg-white/80 p-6 shadow-lg backdrop-blur-sm ${
                   index % 2 === 0
                     ? "md:order-1 md:ml-auto"

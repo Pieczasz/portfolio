@@ -26,26 +26,23 @@ const AboutMeHero = () => {
       initial="initial"
       animate="animate"
       variants={variants}
-      className="my-[4rem] flex flex-col md:my-[7.5rem]"
+      className="my-[4rem] flex flex-col px-4 md:my-[7.5rem] lg:px-0"
     >
       <div className="flex flex-col-reverse items-center justify-center gap-8 md:flex-row md:gap-12">
-        <div className="flex flex-col">
+        <div className="flex w-full flex-col items-start">
           <motion.h1
             variants={variants}
-            className="mb-4 text-center text-3xl font-bold md:text-left md:text-5xl"
+            className="mb-4 text-left text-3xl font-bold md:text-left md:text-5xl"
           >
             About Me
           </motion.h1>
           <motion.p
             variants={variants}
-            className="px-4 text-left text-lg md:text-xl"
+            className="max-w-[50ch] text-left text-lg md:text-xl"
           >
-            I&apos;m Bartek, an 18-year-old software engineer from Poland with a
-            desire for coding practical apps and websites. <br />I specialize in
-            Frontend Development using React.js and TailwindCSS, blending
-            technical expertise with a keen eye for minimalistic design.
-            Currently, I&apos;m in my final year at a technical high school in
-            Poland,
+            I&apos;m Bartek, an 18-year-old developer from Poland. I focus on
+            building websites using React.js and TailwindCSS. I&apos;m
+            completing my education at
             <Link
               href={"https://www.zsti.gliwice.pl/"}
               className="text-blue-600"
@@ -53,26 +50,19 @@ const AboutMeHero = () => {
               {" "}
               Zespół Szkół Techniczno-Informatycznych w Gliwicach
             </Link>
-            , which ranks as the 25th best technical school in Poland.
-            <br /> I strive to make my projects as simple and intuitive as
-            possible, ensuring they are accessible and user-friendly for
-            everyone. In addition to my studies, I enjoy attending to
-            hackathons, continuously improving my skills in designing and
-            developing engaging user experiences.
-            <br />
-            Beyond coding, I have a strong interest in psychology, exploring how
-            people think and make decisions, which helps me create more
-            intuitive user experiences. I also aspire to study abroad and have
-            already taken steps toward this goal by scoring 101 out of 120 on
-            the TOEFL exam.
+            , one of Poland&apos;s top technical schools. I create simple,
+            easy-to-use websites and enjoy participating in hackathons to
+            improve my skills. Outside of programming, I&apos;m interested in
+            psychology and plan to study abroad, having scored 101 on the TOEFL
+            exam.
           </motion.p>
         </div>
 
         <Image
           src={"/me.jpeg"}
           alt="Image of me"
-          width={300}
-          height={600}
+          width={200}
+          height={400}
           className="rounded-t-[3rem]"
         />
       </div>

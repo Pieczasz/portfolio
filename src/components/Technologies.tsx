@@ -1,9 +1,6 @@
 // Components
 import Image from "next/image";
 
-// Functions
-import { useState } from "react";
-
 // Framer motion
 import { motion } from "framer-motion";
 
@@ -62,16 +59,10 @@ const TechnologyCard = ({
   icon: string;
   description: string;
 }) => {
-  const [isHovered, setIsHovered] = useState(false);
-
   return (
     <motion.div
       variants={cardVariants}
-      whileHover={{ scale: 1.03 }}
-      whileTap={{ scale: 0.98 }}
-      onHoverStart={() => setIsHovered(true)}
-      onHoverEnd={() => setIsHovered(false)}
-      className="group flex flex-col items-center gap-4 rounded-xl border border-white/10 bg-white/80 p-6 shadow-lg backdrop-blur-sm transition-all duration-300 hover:border-white/20"
+      className="group flex flex-col items-center gap-4 rounded-xl border border-white/10 bg-white/80 p-6 shadow-lg backdrop-blur-sm"
     >
       <div className="h-12 w-12 flex-shrink-0">
         <Image
@@ -83,28 +74,7 @@ const TechnologyCard = ({
         />
       </div>
       <div className="flex flex-col items-center gap-3 text-center">
-        <div className="relative">
-          <span className="relative z-10 text-lg font-semibold">{name}</span>
-          <svg
-            className="absolute -bottom-[4px] left-0 right-0 z-20 h-[8px] w-full"
-            viewBox="0 0 400 7"
-            preserveAspectRatio="none"
-          >
-            <motion.path
-              d="M 0 4 Q 100 8 200 4 Q 300 0 400 4"
-              strokeWidth="2"
-              fill="none"
-              style={{
-                strokeDasharray: 400,
-                stroke: "#57A464",
-              }}
-              animate={{
-                strokeDashoffset: isHovered ? 0 : 400,
-              }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-            />
-          </svg>
-        </div>
+        <span className="text-lg font-semibold">{name}</span>
         <span className="text-sm text-gray-600">{description}</span>
       </div>
     </motion.div>
