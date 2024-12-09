@@ -12,11 +12,12 @@ import { useTheme } from "@/context/ThemeContext";
 import type { FC } from "react";
 import Image from "next/image";
 import MaxWidthWrapper from "./MaxWidthWrapper";
+import { useRouter } from "next/navigation";
 
 const Header: FC = () => {
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
   const { theme, toggleTheme } = useTheme();
-
+  const router = useRouter();
   return (
     <MaxWidthWrapper>
       <div className="mt-4 flex w-full items-center justify-between">
@@ -28,6 +29,7 @@ const Header: FC = () => {
             height={40}
             className="h-10 w-10 dark:invert"
             priority
+            onClick={() => router.push("/")}
           />
         </div>
         <Nav containerStyles="hidden md:flex font-medium" />
@@ -39,7 +41,7 @@ const Header: FC = () => {
         >
           {theme === "dark" ? (
             <svg
-              className="animate-fade dark-mode-toggle dark h-6 w-6"
+              className="dark-mode-toggle dark h-6 w-6 animate-fade"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -53,7 +55,7 @@ const Header: FC = () => {
             </svg>
           ) : (
             <svg
-              className="animate-fade dark-mode-toggle h-6 w-6"
+              className="dark-mode-toggle h-6 w-6 animate-fade"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -70,7 +72,7 @@ const Header: FC = () => {
 
         <button
           onClick={() => setIsMobileNavOpen(true)}
-          className="p-2 text-gray-800 hover:text-gray-600 dark:text-gray-200 dark:hover:text-gray-400 md:hidden"
+          className="p-2 text-gray-800 hover:text-gray-600 md:hidden dark:text-gray-200 dark:hover:text-gray-400"
         >
           <span className="sr-only">Open menu</span>
           <svg
