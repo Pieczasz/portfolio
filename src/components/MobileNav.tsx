@@ -21,9 +21,12 @@ const MobileNav: FC<MobileNavProps> = ({ isOpen, onClose }) => {
       initial={{ x: "100%" }}
       animate={{ x: isOpen ? 0 : "100%" }}
       transition={{ duration: 0.3 }}
-      className="fixed right-0 top-0 z-50 h-screen w-[300px] bg-white shadow-lg"
+      className="fixed right-0 top-0 z-50 h-screen w-[300px] bg-white/90 backdrop-blur-lg shadow-lg dark:bg-black/80 dark:shadow-black/50"
     >
-      <button onClick={onClose} className="absolute right-4 top-4 p-2">
+      <button 
+        onClick={onClose} 
+        className="absolute right-4 top-4 p-2 text-gray-800 hover:text-gray-600 dark:text-gray-200 dark:hover:text-gray-400"
+      >
         <span className="sr-only">Close menu</span>
         <svg
           xmlns="http://www.w3.org/2000/svg"

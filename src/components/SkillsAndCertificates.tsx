@@ -39,9 +39,9 @@ const items = [
   {
     type: "certificate",
     name: "Github Foundations Certification",
-    icon: <Github className="h-8 w-8 text-gray-700" />,
+    icon: <Github className="h-8 w-8 text-gray-400" />,
     description: "Mastery of Git version control and collaborative development",
-    color: "text-gray-700",
+    color: "text-gray-400",
   },
   {
     type: "skill",
@@ -219,10 +219,13 @@ const SkillsAndCertificates = () => {
       >
         <motion.h2
           variants={variants.item}
-          className="mb-8 text-3xl font-bold text-[#57A464] sm:mb-12 sm:text-4xl"
+          className="mb-8 text-3xl font-bold text-[#57A464] dark:text-[#68c877] sm:mb-12 sm:text-4xl"
         >
-          My Skills <span className="text-black">&</span>
-          <span className="text-[#D9B03E]"> Certificates</span>
+          My Skills <span className="text-black dark:text-white">&</span>
+          <span className="text-[#D9B03E] dark:text-[#f4cc4d]">
+            {" "}
+            Certificates
+          </span>
         </motion.h2>
 
         <div className="grid gap-8">
@@ -233,7 +236,7 @@ const SkillsAndCertificates = () => {
               className="relative grid grid-cols-1 gap-4 md:grid-cols-2"
             >
               <motion.div
-                className={`max-w-md rounded-xl border border-white/10 bg-white/80 p-6 shadow-lg backdrop-blur-sm ${
+                className={`max-w-md rounded-xl border border-gray-100 bg-white/80 p-6 shadow-lg backdrop-blur-sm dark:border-gray-800 dark:bg-gray-900/90 dark:shadow-gray-900/30 ${
                   index % 2 === 0
                     ? "md:order-1 md:ml-auto"
                     : "md:order-2 md:mr-auto"
@@ -245,7 +248,7 @@ const SkillsAndCertificates = () => {
                     <h3 className={`text-xl font-semibold ${item.color}`}>
                       {item.name}
                     </h3>
-                    <p className="mt-2 text-sm text-gray-600">
+                    <p className="mt-2 text-sm text-gray-600 dark:text-gray-300">
                       {item.description}
                     </p>
                   </div>

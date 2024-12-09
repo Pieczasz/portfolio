@@ -41,28 +41,34 @@ const Education = () => {
       </motion.h2>
       <motion.div variants={variants} className="space-y-6">
         <div className="rounded-lg border p-6">
-          <h3 className="text-2xl font-semibold">
+          <h3 className="text-2xl font-semibold text-black dark:text-white">
             Technical High School No. 1 in Gliwice (ZSTI)
           </h3>
-          <p className="text-gray-600">Sep 2020 - April 2025</p>
-          <p className="mt-2 font-medium">
+          <p className="text-gray-600 dark:text-gray-400">
+            Sep 2020 - April 2025
+          </p>
+          <p className="mt-2 font-medium text-black dark:text-white">
             Technical High School Diploma – IT Technician (Technik Informatyk)
           </p>
-          <ul className="mt-4 list-disc space-y-2 pl-6">
-            <li>
+          <ul className="mt-4 list-disc space-y-2 pl-6 text-black dark:text-white">
+            <li className="text-black dark:text-white">
               Ranked among top 25 technical schools in Poland and 2nd in
               Silesian region
             </li>
-            <li>
+            <li className="text-black dark:text-white">
               Maintained average above 4.0, including 4.76 in penultimate year
             </li>
-            <li>Passed INF 02 professional exam in Networking and Servers</li>
-            <li>Preparing for INF 03 Programming exam in January</li>
-            <li>
+            <li className="text-black dark:text-white">
+              Passed INF 02 professional exam in Networking and Servers
+            </li>
+            <li className="text-black dark:text-white">
+              Preparing for INF 03 Programming exam in January
+            </li>
+            <li className="text-black dark:text-white">
               Specialized in network administration, server management, and
               application programming
             </li>
-            <li>
+            <li className="text-black dark:text-white">
               Taking matura exam in May with extended Mathematics and English
             </li>
           </ul>

@@ -111,23 +111,23 @@ const TraPlaPage = () => {
       label: "Frontend",
       stack: "Next.js, React, TypeScript, Tailwind CSS, Shadcn/ui",
       icons: [
-        { icon: SiNextdotjs, color: "text-black" },
+        { icon: SiNextdotjs, color: "text-black dark:text-white" },
         { icon: SiReact, color: "text-blue-400" },
         { icon: SiTypescript, color: "text-blue-600" },
         { icon: SiTailwindcss, color: "text-cyan-500" },
-        { icon: SiShadcnui, color: "text-black" },
+        { icon: SiShadcnui, color: "text-black dark:text-white" },
       ],
     },
     {
       label: "Backend",
       stack: "Next.js API routes, Zod, Drizzle, SQLite, Turso, Vercel",
       icons: [
-        { icon: SiNextdotjs, color: "text-black" },
+        { icon: SiNextdotjs, color: "text-black dark:text-white" },
         { icon: SiZod, color: "text-blue-800" },
         { icon: SiDrizzle, color: "text-green-400" },
         { icon: SiSqlite, color: "text-slate-500" },
         { icon: SiTurso, color: "text-cyan-500" },
-        { icon: SiVercel, color: "text-black" },
+        { icon: SiVercel, color: "text-black dark:text-white" },
       ],
     },
   ];
@@ -148,7 +148,10 @@ const TraPlaPage = () => {
             height={64}
             className="rounded-lg"
           />
-          <motion.h1 variants={variants} className="text-5xl font-bold">
+          <motion.h1
+            variants={variants}
+            className="text-5xl font-bold text-black dark:text-white"
+          >
             TraPla
           </motion.h1>
         </motion.div>
@@ -183,7 +186,7 @@ const TraPlaPage = () => {
           >
             Project overview
           </motion.h2>
-          <motion.p variants={variants} className="text-lg">
+          <motion.p variants={variants} className="text-lg dark:text-gray-200">
             TraPla is a comprehensive travel planning application that enables
             users to create and manage their trips efficiently. Built during a
             2-day hackathon, this full-stack application features Discord
@@ -255,18 +258,22 @@ const TraPlaPage = () => {
               <motion.div
                 key={index}
                 variants={listItemVariants}
-                className="rounded-lg border border-gray-200 p-4 shadow-sm transition-all"
+                className="rounded-lg border border-gray-200 p-4 shadow-sm transition-all dark:border-gray-700 dark:bg-gray-800/50"
               >
-                <h3 className="mb-2 font-semibold">{category.label}</h3>
+                <h3 className="mb-2 font-semibold dark:text-white">
+                  {category.label}
+                </h3>
                 <div className="flex items-center gap-2">
                   {category.icons.map((Icon, iconIndex) => (
                     <Icon.icon
                       key={iconIndex}
-                      className={`h-6 w-6 ${Icon.color}`}
+                      className={`h-6 w-6 ${Icon.color} dark:opacity-90`}
                     />
                   ))}
                 </div>
-                <p className="mt-2 text-sm text-gray-600">{category.stack}</p>
+                <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
+                  {category.stack}
+                </p>
               </motion.div>
             ))}
           </motion.div>
@@ -292,7 +299,7 @@ const TraPlaPage = () => {
                     e.stopPropagation();
                     setSelectedImage(null);
                   }}
-                  className="absolute -right-4 -top-4 z-50 rounded-full bg-white p-2"
+                  className="absolute -right-4 -top-4 z-50 rounded-full bg-white p-2 dark:bg-gray-900"
                 >
                   <X className="h-6 w-6" />
                 </button>

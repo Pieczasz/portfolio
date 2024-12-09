@@ -55,7 +55,7 @@ const Footer: FC = () => {
     >
       <motion.h4
         variants={childVariants}
-        className="text-xl font-semibold sm:text-2xl"
+        className="text-xl font-semibold text-black dark:text-white sm:text-2xl"
       >
         Piekarz 2024 &copy;
       </motion.h4>
@@ -68,10 +68,10 @@ const Footer: FC = () => {
           href="https://linkedin.com"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-x-2 transition-colors hover:text-[#57A464]"
+          className="flex items-center gap-x-2 text-black dark:text-white transition-colors hover:text-[#57A464]"
         >
           <FaLinkedin size={20} className="sm:h-6 sm:w-6" />
-          <span className="text-sm sm:text-base">LinkedIn</span>
+          <span className="text-sm text-black dark:text-white sm:text-base">LinkedIn</span>
         </a>
         <a
           href="https://github.com/Pieczasz"
@@ -104,7 +104,7 @@ const Footer: FC = () => {
 
       <motion.div variants={childVariants} className="flex flex-col gap-y-2">
         <Link href="/contact" className="group flex items-center">
-          <span className="text-2xl font-semibold transition-colors group-hover:text-[#57A464]">
+          <span className="text-2xl font-semibold text-black dark:text-white transition-colors group-hover:text-[#57A464]">
             Contact Me
           </span>
           <svg
@@ -125,7 +125,7 @@ const Footer: FC = () => {
           </svg>
         </Link>
         <Link href="/projects" className="group flex items-center">
-          <span className="text-2xl font-semibold transition-colors group-hover:text-[#57A464]">
+          <span className="text-2xl font-semibold text-black dark:text-white transition-colors group-hover:text-[#57A464]">
             My Projects
           </span>
           <svg

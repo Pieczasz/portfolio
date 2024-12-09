@@ -117,7 +117,7 @@ const SharedAlarmPage = () => {
       stack: "Supabase, PostgreSQL",
       icons: [
         { icon: SiSupabase, color: "text-green-600" },
-        { icon: SiPostgresql, color: "text-slate-800" },
+        { icon: SiPostgresql, color: "text-slate-800 dark:text-slate-300" },
       ],
     },
   ];
@@ -137,9 +137,12 @@ const SharedAlarmPage = () => {
             alt="Shared Alarm Logo"
             width={64}
             height={64}
-            className="rounded-lg"
+            className="rounded-lg bg-white p-2 dark:bg-gray-300"
           />
-          <motion.h1 variants={variants} className="text-5xl font-bold">
+          <motion.h1
+            variants={variants}
+            className="text-5xl font-bold text-black dark:text-white"
+          >
             Shared Alarm
           </motion.h1>
         </motion.div>
@@ -147,9 +150,9 @@ const SharedAlarmPage = () => {
         {/* Add notice banner */}
         <motion.div
           variants={variants}
-          className="mt-8 rounded-lg border border-yellow-200 bg-yellow-50 p-4"
+          className="mt-8 rounded-lg border border-yellow-200 bg-yellow-50 p-4 dark:border-yellow-900/50 dark:bg-yellow-900/20"
         >
-          <p className="text-yellow-800">
+          <p className="text-yellow-800 dark:text-yellow-200">
             🚧 This app is currently under development and not yet available for
             download. Stay tuned for updates!
           </p>
@@ -224,7 +227,7 @@ const SharedAlarmPage = () => {
           <motion.h2 className="text-3xl font-semibold text-[#4e81d2]">
             Key Features
           </motion.h2>
-          <ul className="list-inside list-disc space-y-2 text-lg">
+          <ul className="list-inside list-disc space-y-2 text-lg dark:text-gray-200">
             {[
               "Synchronized alarms across multiple devices",
               "Group alarm creation and management",
@@ -263,18 +266,22 @@ const SharedAlarmPage = () => {
               <motion.div
                 key={index}
                 variants={listItemVariants}
-                className="rounded-lg border border-gray-200 p-4 shadow-sm transition-all"
+                className="rounded-lg border border-gray-200 p-4 shadow-sm transition-all dark:border-gray-700 dark:bg-gray-800/50"
               >
-                <h3 className="mb-2 font-semibold">{category.label}</h3>
+                <h3 className="mb-2 font-semibold dark:text-white">
+                  {category.label}
+                </h3>
                 <div className="flex items-center gap-2">
                   {category.icons.map((Icon, iconIndex) => (
                     <Icon.icon
                       key={iconIndex}
-                      className={`h-6 w-6 ${Icon.color}`}
+                      className={`h-6 w-6 ${Icon.color} dark:opacity-90`}
                     />
                   ))}
                 </div>
-                <p className="mt-2 text-sm text-gray-600">{category.stack}</p>
+                <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
+                  {category.stack}
+                </p>
               </motion.div>
             ))}
           </motion.div>
@@ -300,7 +307,7 @@ const SharedAlarmPage = () => {
                     e.stopPropagation();
                     setSelectedImage(null);
                   }}
-                  className="absolute -right-4 -top-4 z-50 rounded-full bg-white p-2"
+                  className="absolute -right-4 -top-4 z-50 rounded-full bg-white p-2 dark:bg-gray-900"
                 >
                   <X className="h-6 w-6" />
                 </button>

@@ -10,6 +10,7 @@ import { motion } from "framer-motion";
 
 // Types
 import type { FC } from "react";
+import { useTheme } from "@/context/ThemeContext";
 
 // Interfaces
 interface NavLink {
@@ -31,14 +32,16 @@ const links: NavLink[] = [
 
 const Nav: FC<NavProps> = ({ containerStyles, isMobile }) => {
   const path = usePathname();
+  const { theme } = useTheme();
 
   const baseClasses = {
     nav: "flex items-center gap-4",
-    desktop: "h-12 rounded-2xl bg-white/80 px-8 shadow-lg backdrop-blur-sm",
+    desktop:
+      "h-12 rounded-2xl bg-white/80 dark:bg-black/40 px-8 shadow-lg backdrop-blur-sm",
     item: "relative",
     link: "relative block",
     button: "relative rounded-xl px-4 py-2",
-    text: "block font-medium",
+    text: "block font-medium text-gray-800 dark:text-gray-100",
   };
 
   const variants = {
@@ -55,6 +58,28 @@ const Nav: FC<NavProps> = ({ containerStyles, isMobile }) => {
         x: 0,
         scale: 1,
         backgroundColor: "rgba(255, 255, 255, 0.8)",
+        backdropFilter: "blur(8px)",
+        transition: {
+          duration: 0.7,
+          ease: [0.22, 1, 0.36, 1],
+          staggerChildren: 0.1,
+          delayChildren: 0.3,
+        },
+      },
+    },
+    dark: {
+      initial: {
+        opacity: 0,
+        x: -20,
+        scale: 0.95,
+        backgroundColor: "rgba(0, 0, 0, 0)",
+        backdropFilter: "blur(0px)",
+      },
+      animate: {
+        opacity: 1,
+        x: 0,
+        scale: 1,
+        backgroundColor: "rgba(0, 0, 0, 0.4)",
         backdropFilter: "blur(8px)",
         transition: {
           duration: 0.7,
@@ -84,10 +109,14 @@ const Nav: FC<NavProps> = ({ containerStyles, isMobile }) => {
 
   return (
     <motion.nav
-      variants={variants.nav}
+      variants={theme === "dark" ? variants.dark : variants.nav}
       initial="initial"
       animate="animate"
-      className={`${baseClasses.nav} ${!isMobile ? "h-12 rounded-2xl px-8 shadow-lg" : ""} ${containerStyles ?? ""}`}
+      className={`${baseClasses.nav} ${
+        !isMobile
+          ? "h-12 rounded-2xl bg-white/80 px-8 shadow-lg backdrop-blur-md dark:bg-black/40 dark:shadow-black/50"
+          : ""
+      } ${containerStyles ?? ""}`}
     >
       {links.map((link, index) => (
         <motion.div
@@ -98,7 +127,9 @@ const Nav: FC<NavProps> = ({ containerStyles, isMobile }) => {
           <Link href={link.path} className={baseClasses.link}>
             <motion.div
               className={`${baseClasses.button} ${
-                link.path === path ? "bg-[#57A464]/10" : "hover:bg-gray-100"
+                link.path === path
+                  ? "bg-[#57A464]/10 dark:bg-[#57A464]/30"
+                  : "hover:bg-slate-100 dark:hover:bg-gray-800"
               } ${isMobile ? "text-center" : ""}`}
               whileHover={{
                 y: -3.5,
@@ -108,7 +139,7 @@ const Nav: FC<NavProps> = ({ containerStyles, isMobile }) => {
             >
               <motion.span
                 className={`${baseClasses.text} ${
-                  link.path === path ? "text-[#57A464]" : ""
+                  link.path === path ? "text-[#57A464] dark:text-[#68bf77]" : ""
                 } ${isMobile ? "mx-auto" : ""}`}
                 whileHover={{
                   scale: 1.05,

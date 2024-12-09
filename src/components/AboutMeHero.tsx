@@ -32,13 +32,13 @@ const AboutMeHero = () => {
         <div className="flex w-full flex-col items-start">
           <motion.h1
             variants={variants}
-            className="mb-4 text-left text-3xl font-bold md:text-left md:text-5xl"
+            className="mb-4 text-left text-3xl font-bold text-black dark:text-white md:text-left md:text-5xl"
           >
             About Me
           </motion.h1>
           <motion.p
             variants={variants}
-            className="max-w-[50ch] text-left text-lg md:text-xl"
+            className="max-w-[50ch] text-left text-lg text-black dark:text-white md:text-xl"
           >
             I&apos;m Bartek, an 18-year-old developer from Poland. I focus on
             building websites using React.js and TailwindCSS. I&apos;m

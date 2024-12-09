@@ -60,19 +60,23 @@ const Internship = () => {
           variants={variants.component}
           className="rounded-lg border p-4 md:p-6"
         >
-          <h3 className="text-lg font-semibold md:text-xl">
+          <h3 className="text-lg font-semibold text-black dark:text-white md:text-xl">
             Network Administrator
           </h3>
-          <p className="text-sm text-gray-600 md:text-base">
+          <p className="text-sm text-gray-600 dark:text-gray-400 md:text-base">
             WASKO S.A. | March 2023 - March 2023 | April 2024 - May 2024
           </p>
           <ul className="mt-4 list-disc space-y-2 pl-6">
-            <li>
+            <li className="text-black dark:text-white">
               Installed, configured, and maintained servers, routers, firewalls,
               and network devices
             </li>
-            <li>Troubleshot network problems and resolved technical issues</li>
-            <li>Designed and implemented secure network architecture</li>
+            <li className="text-black dark:text-white">
+              Troubleshot network problems and resolved technical issues
+            </li>
+            <li className="text-black dark:text-white">
+              Designed and implemented secure network architecture
+            </li>
           </ul>
         </motion.div>
 
@@ -80,18 +84,18 @@ const Internship = () => {
           variants={variants.component}
           className="rounded-lg border p-4 md:p-6"
         >
-          <h3 className="text-lg font-semibold md:text-xl">
+          <h3 className="text-lg font-semibold text-black dark:text-white md:text-xl">
             Computer Hardware Technician Intern - Faro, Portugal (Erasmus+)
           </h3>
-          <p className="text-sm text-gray-600 md:text-base">
+          <p className="text-sm text-gray-600 dark:text-gray-400 md:text-base">
             May 2023 - May 2023 | International Internship - Erasmus+ Program
           </p>
           <ul className="mt-4 list-disc space-y-2 pl-6">
-            <li>
+            <li className="text-black dark:text-white">
               Installed and configured computer hardware, software, systems, and
               networks
             </li>
-            <li>
+            <li className="text-black dark:text-white">
               Developed and maintained secure network and computer systems
             </li>
           </ul>

@@ -66,27 +66,27 @@ const Hero = () => {
     {
       icon: <FaLinkedin className="text-2xl" />,
       url: "https://www.linkedin.com/in/bart%C5%82omiej-piekarz-274b49304/",
-      color: "hover:text-[#57A464]",
+      color: "hover:text-[#57A464] text-black dark:text-white",
     },
     {
       icon: <FaGithub className="text-2xl" />,
       url: "https://github.com/Pieczasz",
-      color: "hover:text-[#57A464]",
+      color: "hover:text-[#57A464] text-black dark:text-white",
     },
     {
       icon: <SiUpwork className="text-2xl" />,
       url: "https://www.upwork.com/freelancers/~01b14ac855ff93d122",
-      color: "hover:text-[#57A464]",
+      color: "hover:text-[#57A464] text-black dark:text-white",
     },
     {
       icon: <TbBrandFiverr className="text-2xl" />,
       url: "https://www.fiverr.com/pieczasz",
-      color: "hover:text-[#57A464]",
+      color: "hover:text-[#57A464] text-black dark:text-white",
     },
     {
       icon: <FaEnvelope className="text-2xl" />,
       url: "mailto:bartekp854@gmail.com",
-      color: "hover:text-[#57A464]",
+      color: "hover:text-[#57A464] text-black dark:text-white",
     },
   ];
 
@@ -97,33 +97,50 @@ const Hero = () => {
       variants={variants}
       className="my-[7.5rem] flex flex-col px-4 md:px-0"
     >
-      <motion.h1 variants={variants} className="mb-4 text-7xl font-bold">
+      <motion.h1
+        variants={variants}
+        className="mb-4 text-7xl font-bold text-black dark:text-white"
+      >
         Hello, I&apos;m Bartek
       </motion.h1>
       <motion.div
         variants={variants}
         className="mb-8 flex flex-col sm:flex-row sm:items-end sm:gap-x-4"
       >
-        <motion.h2 variants={variants} className="text-4xl font-semibold">
-          Full-Stack <span className="text-[#1A8BA1]">Developer</span>
-          <br />& UI / UX <span className="text-[#57A464]">Designer</span>
+        <motion.h2
+          variants={variants}
+          className="text-4xl font-semibold text-black dark:text-white"
+        >
+          Full-Stack{" "}
+          <span className="text-[#1A8BA1] dark:text-[#20a5bf]">Developer</span>
+          <br />& UI / UX{" "}
+          <span className="text-[#57A464] dark:text-[#68bf77]">Designer</span>
         </motion.h2>
         <motion.p
           variants={
             !isMounted || isSmallScreen ? variants : rotatedTextVariants
           }
-          className="mt-4 text-lg font-medium sm:mb-2"
+          className="mt-4 text-lg font-medium text-black dark:text-white sm:mb-2"
         >
-          Based in <span className="text-[#D61C1C]">Poland</span>
+          Based in{" "}
+          <span className="text-[#D61C1C] dark:text-[#ff2424]">Poland</span>
         </motion.p>
       </motion.div>
-      <motion.h4 variants={variants} className="text-2xl font-semibold">
-        I enjoy <span className="text-[#1A8BA1]">building</span> practical,{" "}
-        minimalistic, <br className="hidden sm:block" />
-        and <span className="text-[#57A464]">easy to use </span>
+      <motion.h4
+        variants={variants}
+        className="text-2xl font-semibold text-black dark:text-white"
+      >
+        I enjoy{" "}
+        <span className="text-[#1A8BA1] dark:text-[#20a5bf]">building</span>{" "}
+        practical, minimalistic, <br className="hidden sm:block" />
+        and{" "}
+        <span className="text-[#57A464] dark:text-[#68bf77]">easy to use </span>
         apps and websites
       </motion.h4>
-      <motion.div variants={variants} className="mt-8 flex gap-6">
+      <motion.div
+        variants={variants}
+        className="mt-8 flex gap-6 text-black dark:text-white"
+      >
         {socialLinks.map((link, index) => (
           <motion.a
             key={index}
@@ -134,7 +151,7 @@ const Hero = () => {
             href={link.url}
             target="_blank"
             rel="noopener noreferrer"
-            className={`transform transition-all duration-300 hover:scale-110 ${link.color}`}
+            className={`transform text-black transition-all duration-300 hover:scale-110 dark:text-white ${link.color}`}
             whileHover={{ y: -2 }}
             whileTap={{ scale: 0.95 }}
           >

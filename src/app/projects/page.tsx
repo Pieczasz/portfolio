@@ -48,12 +48,14 @@ const ProjectCard = ({
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
       onClick={onClick}
-      className="cursor-pointer rounded-lg border p-6 transition-all hover:border-[#57A464] hover:shadow-lg"
+      className="cursor-pointer rounded-lg border p-6 transition-all hover:border-[#57A464] hover:shadow-lg dark:border-gray-700 dark:hover:border-[#57A464]"
     >
       <div className="flex flex-col items-start text-left">
         <div className="flex w-full items-center justify-between gap-4">
           <div className="relative inline-block">
-            <h2 className="text-2xl font-semibold">{project.title}</h2>
+            <h2 className="text-2xl font-semibold text-black dark:text-white">
+              {project.title}
+            </h2>
             <svg
               className="absolute -bottom-[4px] left-0 right-0 z-20 h-[8px] w-full"
               viewBox="0 0 400 7"
@@ -80,19 +82,23 @@ const ProjectCard = ({
               alt={project.title}
               width={48}
               height={48}
-              className="h-full w-full object-contain"
+              className="h-full w-full rounded-lg bg-white object-contain p-1.5 dark:bg-gray-300"
             />
           </div>
         </div>
 
-        <p className="mt-2 text-gray-600">{project.year}</p>
+        <p className="mt-2 text-gray-600 dark:text-gray-400">{project.year}</p>
         <div className="mt-4">
-          <p className="font-medium">{project.role}</p>
-          <p className="text-sm text-gray-600">{project.tech}</p>
+          <p className="font-medium text-gray-800 dark:text-gray-200">
+            {project.role}
+          </p>
+          <p className="text-sm text-gray-600 dark:text-gray-400">
+            {project.tech}
+          </p>
         </div>
         <div className="mt-4 space-y-2">
           {project.description.map((paragraph, index) => (
-            <p key={index} className="text-gray-700">
+            <p key={index} className="text-gray-700 dark:text-gray-300">
               {paragraph}
             </p>
           ))}
@@ -135,7 +141,7 @@ const Projects = () => {
     {
       id: 3,
       title: "Zabrze-Franciszek",
-      icon: "/zabrze_franciszek_logo.png",
+      icon: "/zabrze_franciszek_logo.svg",
       year: "2024",
       role: "Development & UI / UX Design",
       tech: "Next.js & Typescript, PostgreSQL, NextAuth",
@@ -189,7 +195,7 @@ const Projects = () => {
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="mb-12 text-5xl font-bold"
+          className="mb-12 text-5xl font-bold text-black dark:text-white"
         >
           All Projects
         </motion.h1>

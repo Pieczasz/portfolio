@@ -12,6 +12,7 @@ import PageTransitionWrapper from "@/components/PageTransitionWrapper";
 // Components
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { ThemeProvider } from '@/context/ThemeContext'
 
 export const metadata: Metadata = {
   title: "Piekarz",
@@ -24,15 +25,17 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${GeistSans.variable}`}>
-      <body className="min-h-screen">
-        <TRPCReactProvider>
-          <Header />
-          <PageTransitionWrapper>
-            <main>{children}</main>
-          </PageTransitionWrapper>
-          <Footer />
-        </TRPCReactProvider>
+    <html lang="en" className={`${GeistSans.variable}`} suppressHydrationWarning>
+      <body className="min-h-screen bg-white text-black dark:bg-gray-900 dark:text-white">
+        <ThemeProvider>
+          <TRPCReactProvider>
+            <Header />
+            <PageTransitionWrapper>
+              <main>{children}</main>
+            </PageTransitionWrapper>
+            <Footer />
+          </TRPCReactProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

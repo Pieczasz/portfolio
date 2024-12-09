@@ -59,10 +59,13 @@ const TechnologyCard = ({
   icon: string;
   description: string;
 }) => {
+  // Add className for dark logos that need to be inverted in dark mode
+  const shouldInvertInDarkMode = name === "Next.js" || name === "Figma";
+
   return (
     <motion.div
       variants={cardVariants}
-      className="group flex flex-col items-center gap-4 rounded-xl border border-white/10 bg-white/80 p-6 shadow-lg backdrop-blur-sm"
+      className="border-border dark:border-border-dark bg-background dark:bg-background-dark group flex flex-col items-center gap-4 rounded-xl border p-6 shadow-lg backdrop-blur-sm"
     >
       <div className="h-12 w-12 flex-shrink-0">
         <Image
@@ -70,12 +73,18 @@ const TechnologyCard = ({
           alt={name}
           width={48}
           height={48}
-          className="h-full w-full"
+          className={`h-full w-full ${
+            shouldInvertInDarkMode ? "dark:invert" : ""
+          }`}
         />
       </div>
       <div className="flex flex-col items-center gap-3 text-center">
-        <span className="text-lg font-semibold">{name}</span>
-        <span className="text-sm text-gray-600">{description}</span>
+        <span className="text-foreground dark:text-foreground-dark text-lg font-semibold">
+          {name}
+        </span>
+        <span className="text-muted-foreground dark:text-muted-dark-foreground text-sm">
+          {description}
+        </span>
       </div>
     </motion.div>
   );

@@ -90,7 +90,7 @@ const MyProjects = () => {
         <div className="flex w-full max-w-5xl items-start">
           <motion.h2
             variants={variants.item}
-            className="text-4xl font-bold text-[#57A464]"
+            className="text-4xl font-bold text-[#57A464] dark:text-[#68bf77]"
           >
             My Projects
           </motion.h2>
@@ -102,7 +102,7 @@ const MyProjects = () => {
               key={project.id}
               variants={variants.item}
               whileHover={{ scale: 1.02 }}
-              className="group relative border-b-2 border-gray-200 hover:cursor-pointer"
+              className="group relative border-b-2 border-gray-200 hover:cursor-pointer dark:border-gray-700"
               onMouseEnter={() => setHoveredId(project.id)}
               onMouseLeave={() => setHoveredId(null)}
               onClick={() =>
@@ -112,23 +112,25 @@ const MyProjects = () => {
               <div className="mx-auto my-9 flex max-w-3xl flex-col space-y-4 px-4 sm:px-6">
                 <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between sm:space-y-0">
                   <div className="flex flex-col items-start">
-                    <h3 className="text-2xl font-semibold sm:text-3xl">
+                    <h3 className="text-2xl font-semibold text-black dark:text-white sm:text-3xl">
                       {project.title}
                     </h3>
-                    <p className="text-base sm:text-lg">{project.year}</p>
+                    <p className="text-base text-black dark:text-white sm:text-lg">
+                      {project.year}
+                    </p>
                   </div>
                   <div className="flex flex-col items-start">
-                    <h5 className="text-lg font-medium sm:text-xl">
+                    <h5 className="text-lg font-medium text-black dark:text-white sm:text-xl">
                       {project.role}
                     </h5>
-                    <p className="text-sm font-light sm:text-base">
+                    <p className="text-sm font-light text-black dark:text-white sm:text-base">
                       {project.tech}
                     </p>
                   </div>
                 </div>
 
                 <div className="flex items-center justify-between">
-                  <p className="max-w-2xl text-gray-600">
+                  <p className="max-w-2xl text-gray-600 dark:text-gray-300">
                     {project.description}
                   </p>
                   <ArrowRight className="-translate-x-4 opacity-0 transition-all duration-200 group-hover:translate-x-0 group-hover:opacity-100" />
