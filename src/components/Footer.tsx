@@ -105,7 +105,10 @@ const Footer: FC = () => {
       </motion.div>
 
       <motion.div variants={childVariants} className="flex flex-col gap-y-2">
-        <Link href="/contact" className="group flex items-center">
+        <Link
+          href="mailto:bartekp854@gmail.com"
+          className="group flex items-center"
+        >
           <span className="text-2xl font-semibold text-black transition-colors group-hover:text-[#57A464] dark:text-white">
             Contact Me
           </span>
