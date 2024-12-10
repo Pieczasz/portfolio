@@ -31,7 +31,7 @@ const Education = () => {
       whileInView="whileInView"
       viewport={{ once: true, margin: "-100px" }}
       variants={variants}
-      className="flex flex-col gap-y-6"
+      className="flex flex-col gap-y-6 px-4 lg:px-0"
     >
       <motion.h2
         variants={variants}

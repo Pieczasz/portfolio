@@ -150,7 +150,7 @@ const TraPlaPage = () => {
           />
           <motion.h1
             variants={variants}
-            className="text-5xl font-bold text-black dark:text-white"
+            className="text-4xl lg:text-5xl font-bold text-black dark:text-white"
           >
             TraPla
           </motion.h1>
@@ -182,7 +182,7 @@ const TraPlaPage = () => {
         <motion.section variants={variants} className="mt-16 space-y-4">
           <motion.h2
             variants={variants}
-            className="text-4xl font-bold text-[#3a49ad]"
+            className="text-3xl lg:text-4xl font-bold text-[#3a49ad]"
           >
             Project overview
           </motion.h2>

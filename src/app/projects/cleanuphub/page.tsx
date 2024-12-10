@@ -157,7 +157,7 @@ const CleanupHubPage = () => {
           />
           <motion.h1
             variants={variants}
-            className="text-5xl font-bold text-black dark:text-white"
+            className="text-4xl font-bold text-black lg:text-5xl dark:text-white"
           >
             CleanupHub
           </motion.h1>
@@ -193,7 +193,7 @@ const CleanupHubPage = () => {
         >
           <motion.h2
             variants={variants}
-            className="text-4xl font-bold text-[#57A464]"
+            className="text-3xl font-bold text-[#57A464] lg:text-4xl"
           >
             Project overview
           </motion.h2>

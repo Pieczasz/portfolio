@@ -149,7 +149,7 @@ const ZabrzeFranciszekPage = () => {
           />
           <motion.h1
             variants={variants}
-            className="text-5xl font-bold text-black dark:text-white"
+            className="text-4xl font-bold text-black lg:text-5xl dark:text-white"
           >
             Zabrze Franciszek
           </motion.h1>
@@ -204,7 +204,7 @@ const ZabrzeFranciszekPage = () => {
         <motion.section variants={variants} className="mt-16 space-y-4">
           <motion.h2
             variants={variants}
-            className="text-4xl font-bold text-[#303030]"
+            className="text-3xl font-bold text-[#303030] lg:text-4xl"
           >
             Project overview
           </motion.h2>

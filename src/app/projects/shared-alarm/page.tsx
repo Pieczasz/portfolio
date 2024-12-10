@@ -141,7 +141,7 @@ const SharedAlarmPage = () => {
           />
           <motion.h1
             variants={variants}
-            className="text-5xl font-bold text-black dark:text-white"
+            className="text-4xl font-bold text-black lg:text-5xl dark:text-white"
           >
             Shared Alarm
           </motion.h1>

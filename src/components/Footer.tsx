@@ -55,7 +55,7 @@ const Footer: FC = () => {
     >
       <motion.h4
         variants={childVariants}
-        className="text-xl font-semibold text-black dark:text-white sm:text-2xl"
+        className="text-xl font-semibold text-black sm:text-2xl dark:text-white"
       >
         Piekarz 2024 &copy;
       </motion.h4>
@@ -68,10 +68,12 @@ const Footer: FC = () => {
           href="https://linkedin.com"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-x-2 text-black dark:text-white transition-colors hover:text-[#57A464]"
+          className="flex items-center gap-x-2 text-black transition-colors hover:text-[#57A464] dark:text-white"
         >
           <FaLinkedin size={20} className="sm:h-6 sm:w-6" />
-          <span className="text-sm text-black dark:text-white sm:text-base">LinkedIn</span>
+          <span className="text-sm text-black sm:text-base dark:text-white">
+            LinkedIn
+          </span>
         </a>
         <a
           href="https://github.com/Pieczasz"
@@ -104,12 +106,12 @@ const Footer: FC = () => {
 
       <motion.div variants={childVariants} className="flex flex-col gap-y-2">
         <Link href="/contact" className="group flex items-center">
-          <span className="text-2xl font-semibold text-black dark:text-white transition-colors group-hover:text-[#57A464]">
+          <span className="text-2xl font-semibold text-black transition-colors group-hover:text-[#57A464] dark:text-white">
             Contact Me
           </span>
           <svg
             viewBox="0 0 24 24"
-            className="ml-2 h-6 w-6 fill-none stroke-black stroke-[3px] transition-all duration-300 ease-in-out"
+            className="ml-2 h-6 w-6 fill-none stroke-black stroke-[3px] transition-all duration-300 ease-in-out dark:stroke-white"
           >
             <line
               x1="5"
@@ -125,12 +127,12 @@ const Footer: FC = () => {
           </svg>
         </Link>
         <Link href="/projects" className="group flex items-center">
-          <span className="text-2xl font-semibold text-black dark:text-white transition-colors group-hover:text-[#57A464]">
+          <span className="text-2xl font-semibold text-black transition-colors group-hover:text-[#57A464] dark:text-white">
             My Projects
           </span>
           <svg
             viewBox="0 0 24 24"
-            className="ml-2 h-6 w-6 fill-none stroke-black stroke-[3px] transition-all duration-300 ease-in-out"
+            className="ml-2 h-6 w-6 fill-none stroke-black stroke-[3px] transition-all duration-300 ease-in-out dark:stroke-white"
           >
             <line
               x1="5"
