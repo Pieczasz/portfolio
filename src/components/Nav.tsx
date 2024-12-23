@@ -26,11 +26,18 @@ const links: NavLink[] = [
   { path: "/", name: "Home" },
   { path: "/projects", name: "Projects" },
   { path: "/about", name: "About Me" },
-  { path: "/resume", name: "Resume" },
+  { path: "#", name: "Resume" },
 ];
 
 const Nav: FC<NavProps> = ({ containerStyles, isMobile }) => {
   const path = usePathname();
+
+  const handleClick = (link: NavLink) => {
+    if (link.name === "Resume") {
+      // Open PDF in a new tab
+      window.open("/BartlomiejPiekarzCV.pdf", "_blank");
+    }
+  };
 
   const baseClasses = {
     nav: "flex items-center gap-4",
@@ -96,9 +103,10 @@ const Nav: FC<NavProps> = ({ containerStyles, isMobile }) => {
           variants={variants.item}
           className={`${baseClasses.item} ${isMobile ? "w-full" : ""}`}
         >
-          <Link href={link.path} className={baseClasses.link}>
+          {link.name === "Resume" ? (
             <motion.div
-              className={`${baseClasses.button} ${
+              onClick={() => handleClick(link)}
+              className={`${baseClasses.button} cursor-pointer ${
                 link.path === path
                   ? "bg-[#57A464]/[0.13] dark:bg-[#57A464]/30"
                   : "hover:bg-slate-100 dark:hover:bg-gray-800"
@@ -121,7 +129,36 @@ const Nav: FC<NavProps> = ({ containerStyles, isMobile }) => {
                 {link.name}
               </motion.span>
             </motion.div>
-          </Link>
+          ) : (
+            <Link href={link.path} className={baseClasses.link}>
+              <motion.div
+                className={`${baseClasses.button} ${
+                  link.path === path
+                    ? "bg-[#57A464]/[0.13] dark:bg-[#57A464]/30"
+                    : "hover:bg-slate-100 dark:hover:bg-gray-800"
+                } ${isMobile ? "text-center" : ""}`}
+                whileHover={{
+                  y: -3.5,
+                  scale: 1.08,
+                  transition: { type: "spring", stiffness: 400, damping: 10 },
+                }}
+              >
+                <motion.span
+                  className={`${baseClasses.text} ${
+                    link.path === path
+                      ? "text-[#57A464] dark:text-[#68bf77]"
+                      : ""
+                  } ${isMobile ? "mx-auto" : ""}`}
+                  whileHover={{
+                    scale: 1.05,
+                    transition: { type: "spring", stiffness: 400, damping: 10 },
+                  }}
+                >
+                  {link.name}
+                </motion.span>
+              </motion.div>
+            </Link>
+          )}
         </motion.div>
       ))}
     </motion.nav>
