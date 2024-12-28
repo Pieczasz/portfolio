@@ -1,8 +1,6 @@
 # Portfolio
 
-Welcome to my portfolio! Here you will find a collection of my projects and accomplishments as a developer. I have experience in various programming languages and technologies, and I am passionate about creating efficient and innovative solutions.
-
-## Projects
+Welcome to my portfolio! Here you will find a collection of my projects and accomplishments as a developer. I have experience in various programming languages and technologies, have fun going through my projects, education, internships, and other stuff.
 
 ## Contact
 
