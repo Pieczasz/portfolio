@@ -36,13 +36,13 @@ const items = [
     description: "Building responsive web applications and mobile solutions",
     color: "text-emerald-500",
   },
-  {
-    type: "certificate",
-    name: "Github Foundations Certification",
-    icon: <Github className="h-8 w-8 text-gray-400" />,
-    description: "Mastery of Git version control and collaborative development",
-    color: "text-gray-400",
-  },
+  // {
+  //   type: "certificate",
+  //   name: "Github Foundations Certification",
+  //   icon: <Github className="h-8 w-8 text-gray-400" />,
+  //   description: "Mastery of Git version control and collaborative development",
+  //   color: "text-gray-400",
+  // },
   {
     type: "skill",
     name: "Deployment",
@@ -50,13 +50,13 @@ const items = [
     description: "Managing cloud infrastructure and application deployment",
     color: "text-sky-500",
   },
-  {
-    type: "certificate",
-    name: "MongoDB certificate (Node.js)",
-    icon: <Database className="h-8 w-8 text-green-600" />,
-    description: "Expertise in MongoDB database design and Node.js integration",
-    color: "text-green-600",
-  },
+  // {
+  //   type: "certificate",
+  //   name: "MongoDB certificate (Node.js)",
+  //   icon: <Database className="h-8 w-8 text-green-600" />,
+  //   description: "Expertise in MongoDB database design and Node.js integration",
+  //   color: "text-green-600",
+  // },
 ];
 
 // Variants
@@ -219,7 +219,7 @@ const SkillsAndCertificates = () => {
       >
         <motion.h2
           variants={variants.item}
-          className="mb-8 text-3xl font-bold text-[#57A464] dark:text-[#68c877] sm:mb-12 sm:text-4xl"
+          className="mb-8 text-3xl font-bold text-[#57A464] sm:mb-12 sm:text-4xl dark:text-[#68c877]"
         >
           My Skills <span className="text-black dark:text-white">&</span>
           <span className="text-[#D9B03E] dark:text-[#f4cc4d]">
