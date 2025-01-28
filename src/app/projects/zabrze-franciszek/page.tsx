@@ -193,11 +193,14 @@ const ZabrzeFranciszekPage = () => {
               }
             }}
           >
-            <div className="flex cursor-not-allowed items-center gap-2 rounded-lg border border-gray-400 px-4 py-2 text-gray-600">
+            <Link
+              href="https://github.com/Pieczasz/franciszek-zabrze"
+              target="_blank"
+              className="flex items-center gap-2 rounded-lg border border-gray-400 px-4 py-2 text-gray-600 transition-colors hover:border-gray-600 hover:text-gray-800 dark:hover:border-gray-300 dark:hover:text-gray-300"
+            >
               <Github size={20} />
               <span>Source</span>
-              <Lock className="lock-icon ml-1" size={16} />
-            </div>
+            </Link>
           </motion.div>
         </motion.div>
 
