@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import Image from "next/image";
 import Link from "next/link";
-import { Github, Link2, X, Lock } from "lucide-react";
+import { Github, Link2, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   SiTypescript,
