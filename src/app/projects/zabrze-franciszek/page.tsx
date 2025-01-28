@@ -166,40 +166,13 @@ const ZabrzeFranciszekPage = () => {
               <span>Visit Website</span>
             </Link>
           </motion.div>
-          <motion.div
-            variants={linkVariants}
-            whileHover="hover"
-            whileTap="tap"
-            onClick={(e) => {
-              e.preventDefault();
-              const lockElement = e.currentTarget.querySelector(".lock-icon");
-              if (lockElement) {
-                const motionLock = lockElement as HTMLElement;
-                motionLock.style.transform = "rotate(0deg)";
-                motionLock.animate(
-                  [
-                    { transform: "rotate(0deg)" },
-                    { transform: "rotate(-10deg)" },
-                    { transform: "rotate(10deg)" },
-                    { transform: "rotate(-10deg)" },
-                    { transform: "rotate(10deg)" },
-                    { transform: "rotate(0deg)" },
-                  ],
-                  {
-                    duration: 500,
-                    easing: "ease-in-out",
-                  },
-                );
-              }
-            }}
-          >
+          <motion.div variants={linkVariants} whileHover="hover" whileTap="tap">
             <Link
-              href="https://github.com/Pieczasz/franciszek-zabrze"
-              target="_blank"
+              href="#" // Either remove the link or replace with correct repository URL
               className="flex items-center gap-2 rounded-lg border border-gray-400 px-4 py-2 text-gray-600 transition-colors hover:border-gray-600 hover:text-gray-800 dark:hover:border-gray-300 dark:hover:text-gray-300"
             >
               <Github size={20} />
-              <span>Source</span>
+              <span>Private Repository</span>
             </Link>
           </motion.div>
         </motion.div>
@@ -207,7 +180,7 @@ const ZabrzeFranciszekPage = () => {
         <motion.section variants={variants} className="mt-16 space-y-4">
           <motion.h2
             variants={variants}
-            className="text-3xl font-bold text-[#303030] lg:text-4xl"
+            className="text-3xl font-bold text-[#303030] lg:text-4xl dark:text-white"
           >
             Project overview
           </motion.h2>
@@ -243,7 +216,7 @@ const ZabrzeFranciszekPage = () => {
         </motion.section>
         {/* Key Features section */}
         <motion.section className="mt-16 space-y-4">
-          <motion.h2 className="text-3xl font-semibold text-[#303030]">
+          <motion.h2 className="text-3xl font-semibold text-[#303030] dark:text-white">
             Key Features
           </motion.h2>
           <ul className="list-inside list-disc space-y-2 text-lg">
@@ -270,7 +243,7 @@ const ZabrzeFranciszekPage = () => {
         <motion.section variants={variants} className="mt-16 space-y-4">
           <motion.h2
             variants={variants}
-            className="text-3xl font-semibold text-[#303030]"
+            className="text-3xl font-semibold text-[#303030] dark:text-white"
           >
             Tech Stack
           </motion.h2>
