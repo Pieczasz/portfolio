@@ -1,53 +1,56 @@
 // Components
 import Image from "next/image";
 
+// Utils
+import { assetPath } from "@/lib/assetPath";
+
 // Framer motion
 import { motion } from "motion/react";
 
 const technologies = [
 	{
 		name: "Next.js",
-		icon: "/nextjs.svg",
+		icon: assetPath("/nextjs.svg"),
 		description:
 			"Full-stack framework for React applications with server-side rendering and static generation",
 	},
 	{
 		name: "React & React Native",
-		icon: "/react.svg",
+		icon: assetPath("/react.svg"),
 		description:
 			"Building interactive user interfaces for web and mobile applications",
 	},
 	{
 		name: "TypeScript",
-		icon: "/typescript.svg",
+		icon: assetPath("/typescript.svg"),
 		description:
 			"Type-safe JavaScript that scales for reliable enterprise applications",
 	},
 	{
 		name: "Tailwind CSS",
-		icon: "/tailwind.svg",
+		icon: assetPath("/tailwind.svg"),
 		description: "Utility-first CSS framework for rapid UI development",
 	},
 	{
 		name: "Swift",
-		icon: "/swift.svg",
+		icon: assetPath("/swift.svg"),
 		description: "Native iOS development for performant mobile applications",
 	},
 	{
 		name: "Kotlin",
-		icon: "/kotlin.svg",
+		icon: assetPath("/kotlin.svg"),
 		description:
 			"Modern programming language for Android and cross-platform development",
 	},
 	{
 		name: "Firebase",
-		icon: "/firebase.svg",
+		icon: assetPath("/firebase.svg"),
 		description:
 			"Backend platform with auth, Realtime Database, NoSQL DB - Firestore, and Cloud Functions",
 	},
 	{
 		name: "PostgreSQL",
-		icon: "/postgresql.svg",
+		icon: assetPath("/postgresql.svg"),
 		description:
 			"Advanced open-source relational database for scalable applications",
 	},

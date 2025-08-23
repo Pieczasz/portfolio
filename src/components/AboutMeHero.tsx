@@ -4,6 +4,9 @@
 import Image from "next/image";
 import Link from "next/link";
 
+// Utils
+import { assetPath } from "@/lib/assetPath";
+
 // Framer motion
 import { motion } from "motion/react";
 
@@ -60,7 +63,7 @@ const AboutMeHero = () => {
 				</div>
 
 				<Image
-					src={"/me.jpeg"}
+					src={assetPath("/me.jpeg")}
 					alt="Image of me"
 					width={200}
 					height={400}
