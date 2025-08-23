@@ -9,7 +9,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 
 // Framer motion
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 
 const ProjectCard = ({
   project,

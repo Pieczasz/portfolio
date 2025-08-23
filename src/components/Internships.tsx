@@ -1,7 +1,7 @@
 "use client";
 
 // Framer motion
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 
 const Internship = () => {
   const variants = {

@@ -7,7 +7,7 @@ import Image from "next/image";
 import MaxWidthWrapper from "./MaxWidthWrapper";
 
 // Framer motion
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 
 // Functions
 import { useState } from "react";

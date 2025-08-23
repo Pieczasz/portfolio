@@ -1,7 +1,7 @@
 "use client";
 
 // Framer Motion
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 
 const Education = () => {
   const variants = {

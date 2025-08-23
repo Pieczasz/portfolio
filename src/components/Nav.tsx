@@ -6,7 +6,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 // Framer motion
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 
 // Types
 import type { FC } from "react";
