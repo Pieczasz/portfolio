@@ -66,7 +66,7 @@ const workExperiences: WorkExperience[] = [
 		],
 	},
 	{
-		company: "InnoBee: Innovation Management Platform",
+		company: "InnoBee",
 		position: "Product Developer (Frontend Developer)",
 		duration: "Mar 2025 - Jun 2025",
 		location: "Netherlands (Remote)",
