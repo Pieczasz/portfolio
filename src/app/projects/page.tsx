@@ -118,6 +118,19 @@ const Projects = () => {
 	const projectData = [
 		{
 			id: 1,
+			title: "Quill",
+			icon: assetPath("/quill_logo.png"),
+			year: "August 2025",
+			role: "Backend & Frontend Development",
+			tech: "Next.js, TypeScript, Node.js, Firebase (Realtime Database, Firestore, Functions), Sentry, PostHog",
+			description: [
+				"A real-time collaboration tool for Unity game development that enables teams to work together seamlessly.",
+				"Built comprehensive backend infrastructure with Firebase Realtime Database for live collaboration and Firestore for persistent data storage.",
+				"Integrated Sentry for error tracking and PostHog for analytics, ensuring robust monitoring and user insights.",
+			],
+		},
+		{
+			id: 2,
 			title: "Shared-Alarm",
 			icon: assetPath("/shared_alarm_logo.png"),
 			year: "2025",
@@ -127,19 +140,6 @@ const Projects = () => {
 				"A collaborative alarm app that revolutionizes how friends and family wake up together, ensuring everyone stays synchronized for important events.",
 				"Features include shared alarm groups and real-time confirmation when group members wake up.",
 				"The app utilizes push notifications, background tasks, and seamless cloud synchronization to provide a reliable and engaging morning routine experience.",
-			],
-		},
-		{
-			id: 2,
-			title: "CleanupHub",
-			icon: assetPath("/CleanupHubLogo.png"),
-			year: "2024",
-			role: "Development & UI / UX Design",
-			tech: "Next.js & Typescript, PostgreSQL, NextAuth",
-			description: [
-				"A comprehensive platform that connects environmental enthusiasts with local cleanup initiatives, making it easier than ever to participate in community environmental actions.",
-				"Implements real-time mapping of cleanup events, progress tracking, and gamification elements to encourage consistent participation.",
-				"Features include event creation tools, team formation capabilities, and impact metrics to visualize the collective difference made by the community.",
 			],
 		},
 		{
@@ -153,19 +153,6 @@ const Projects = () => {
 				"A website which I created for my church parish.",
 				"It includes information about the parish, events, contact details, and roles for every parish member (altar boys, priests, etc.)",
 				"The website is designed to be user-friendly and accessible to all members of the parish.",
-			],
-		},
-		{
-			id: 4,
-			title: "TraPla",
-			icon: assetPath("/TravelPlanner.svg"),
-			year: "2024",
-			role: "Development",
-			tech: "Next.js, SQLite",
-			description: [
-				"A travel planning application built for hackathon, to help users organize their trips.",
-				"Features include itinerary creation, budget tracking, and collaborative planning with friends.",
-				"The app aims to simplify the travel planning process and enhance the overall travel experience.",
 			],
 		},
 		// TODO: Add more projects

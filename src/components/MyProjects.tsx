@@ -42,6 +42,15 @@ const MyProjects = () => {
 	const projectData = [
 		{
 			id: 1,
+			title: "Quill",
+			year: "August 2025",
+			role: "Backend & Frontend Development",
+			tech: "Next.js, TypeScript, Node.js, Firebase",
+			description:
+				"A real-time collaboration tool for Unity game development teams.",
+		},
+		{
+			id: 2,
 			title: "Shared-Alarm",
 			year: "2025",
 			role: "Development & UI / UX Design",
@@ -50,30 +59,12 @@ const MyProjects = () => {
 				"A collaborative alarm app that lets you share and sync alarms with friends and family.",
 		},
 		{
-			id: 2,
-			title: "CleanupHub",
-			year: "2024",
-			role: "Development & UI / UX Design",
-			tech: "Next.js & Typescript, PostgreSQL, NextAuth",
-			description:
-				"A platform to organize and participate in community clean-up events.",
-		},
-		{
 			id: 3,
 			title: "Zabrze-Franciszek",
 			year: "2024",
 			role: "Development & UI / UX Design",
 			tech: "Next.js & Typescript, PostgreSQL, NextAuth",
 			description: "A website which I created for my church parish.",
-		},
-		{
-			id: 4,
-			title: "TraPla",
-			year: "2024",
-			role: "Development",
-			tech: "Next.js, SQLite",
-			description:
-				"A travel planning application built for hackathon, to help users organize their trips.",
 		},
 	];
 

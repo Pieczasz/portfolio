@@ -4,25 +4,22 @@ import { useState, useEffect } from "react";
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import Image from "next/image";
 import Link from "next/link";
-import { Github, Link2, X } from "lucide-react";
+import { Link2, X } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import {
+	SiNextdotjs,
 	SiTypescript,
 	SiTailwindcss,
 	SiReact,
-	SiZod,
-	SiNextdotjs,
-	SiShadcnui,
-	SiVercel,
-	SiSqlite,
-	SiDrizzle,
-	SiTurso,
+	SiFirebase,
+	SiNodedotjs,
+	SiSentry,
 } from "react-icons/si";
 
 // Utils
 import { assetPath } from "@/lib/assetPath";
 
-const TraPlaPage = () => {
+const QuillPage = () => {
 	const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
 	useEffect(() => {
@@ -103,34 +100,31 @@ const TraPlaPage = () => {
 	};
 
 	const screenshots = [
-		assetPath("/trapla/trapla_page.jpg"),
-		assetPath("/trapla/trapla_trips.jpg"),
-		assetPath("/trapla/trapla_create_trip.jpg"),
-		assetPath("/trapla/trapla_trip_page.jpg"),
+		assetPath("/quill-baner.jpg"),
+		assetPath("/quill_comment_showcase.png"),
+		assetPath("/Locks.png"),
 	];
 
 	const techStack = [
 		{
 			label: "Frontend",
-			stack: "Next.js, React, TypeScript, Tailwind CSS, Shadcn/ui",
+			stack: "Next.js, React, TypeScript, Tailwind CSS",
 			icons: [
 				{ icon: SiNextdotjs, color: "text-black dark:text-white" },
 				{ icon: SiReact, color: "text-blue-400" },
 				{ icon: SiTypescript, color: "text-blue-600" },
 				{ icon: SiTailwindcss, color: "text-cyan-500" },
-				{ icon: SiShadcnui, color: "text-black dark:text-white" },
 			],
 		},
 		{
-			label: "Backend",
-			stack: "Next.js API routes, Zod, Drizzle, SQLite, Turso, Vercel",
+			label: "Backend & Infrastructure",
+			stack:
+				"Node.js, TypeScript, Firebase (Realtime Database, Firestore, Functions), Sentry, PostHog",
 			icons: [
-				{ icon: SiNextdotjs, color: "text-black dark:text-white" },
-				{ icon: SiZod, color: "text-blue-800" },
-				{ icon: SiDrizzle, color: "text-green-400" },
-				{ icon: SiSqlite, color: "text-slate-500" },
-				{ icon: SiTurso, color: "text-cyan-500" },
-				{ icon: SiVercel, color: "text-black dark:text-white" },
+				{ icon: SiNodedotjs, color: "text-green-600" },
+				{ icon: SiTypescript, color: "text-blue-600" },
+				{ icon: SiFirebase, color: "text-orange-500" },
+				{ icon: SiSentry, color: "text-purple-600" },
 			],
 		},
 	];
@@ -145,8 +139,8 @@ const TraPlaPage = () => {
 			>
 				<motion.div variants={variants} className="flex items-center gap-4">
 					<Image
-						src={assetPath("/TravelPlanner.svg")}
-						alt="TraPla Logo"
+						src={assetPath("/quill_logo.png")}
+						alt="Quill Logo"
 						width={64}
 						height={64}
 						className="rounded-lg"
@@ -155,29 +149,19 @@ const TraPlaPage = () => {
 						variants={variants}
 						className="text-4xl lg:text-5xl font-bold text-black dark:text-white"
 					>
-						TraPla
+						Quill
 					</motion.h1>
 				</motion.div>
 
 				<motion.div variants={variants} className="mt-16 flex gap-4">
 					<motion.div variants={linkVariants} whileHover="hover" whileTap="tap">
 						<Link
-							href="https://trapla.vercel.app/"
+							href="https://quill4.dev/"
 							target="_blank"
-							className="flex items-center gap-2 rounded-lg bg-[#3a49ad] px-4 py-2 text-white transition-colors hover:bg-black"
+							className="flex items-center gap-2 rounded-lg bg-[#FF6B35] px-4 py-2 text-white transition-colors hover:bg-black"
 						>
 							<Link2 size={20} />
 							<span>Visit Website</span>
-						</Link>
-					</motion.div>
-					<motion.div variants={linkVariants} whileHover="hover" whileTap="tap">
-						<Link
-							href="https://github.com/Pieczasz/travel-planner"
-							target="_blank"
-							className="flex items-center gap-2 rounded-lg border border-[#3a49ad] px-4 py-2 text-[#3a49ad] transition-colors hover:bg-[#3a49ad] hover:text-white"
-						>
-							<Github size={20} />
-							<span>Source</span>
 						</Link>
 					</motion.div>
 				</motion.div>
@@ -185,22 +169,31 @@ const TraPlaPage = () => {
 				<motion.section variants={variants} className="mt-16 space-y-4">
 					<motion.h2
 						variants={variants}
-						className="text-3xl lg:text-4xl font-bold text-[#3a49ad]"
+						className="text-3xl lg:text-4xl font-bold text-[#FF6B35]"
 					>
 						Project overview
 					</motion.h2>
 					<motion.p variants={variants} className="text-lg dark:text-gray-200">
-						TraPla is a comprehensive travel planning application that enables
-						users to create and manage their trips efficiently. Built during a
-						2-day hackathon, this full-stack application features Discord
-						authentication and persistent data storage. Users can organize their
-						travels, add detailed notes, and collaborate on trip planning.
+						Quill is a real-time collaboration tool designed specifically for
+						Unity game development teams. It enables seamless collaboration
+						among team members by providing powerful features for commenting,
+						locking assets, and real-time synchronization across the development
+						workflow.
+					</motion.p>
+					<motion.p variants={variants} className="text-lg dark:text-gray-200">
+						I built the comprehensive backend infrastructure using
+						Firebase&apos;s suite of tools, including Realtime Database for live
+						collaboration features and Firestore for persistent data storage.
+						The system is enhanced with Sentry for error tracking and PostHog
+						for analytics, ensuring robust monitoring and valuable user
+						insights. The frontend is built with Next.js, providing a modern and
+						responsive user interface.
 					</motion.p>
 				</motion.section>
 
 				<motion.section className="mt-16 space-y-4">
 					<div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-						{screenshots.map((src, index) => (
+						{screenshots.map((src) => (
 							<motion.div
 								key={src}
 								variants={variants}
@@ -210,7 +203,7 @@ const TraPlaPage = () => {
 							>
 								<Image
 									src={src}
-									alt={`TraPla Screenshot ${index + 1}`}
+									alt="Quill Screenshot"
 									width={800}
 									height={450}
 									className="w-full"
@@ -219,22 +212,27 @@ const TraPlaPage = () => {
 						))}
 					</div>
 				</motion.section>
+
 				{/* Key Features section */}
 				<motion.section className="mt-16 space-y-4">
-					<motion.h2 className="text-3xl font-semibold text-[#3a49ad]">
+					<motion.h2 className="text-3xl font-semibold text-[#FF6B35]">
 						Key Features
 					</motion.h2>
 					<ul className="list-inside list-disc space-y-2 text-lg">
 						{[
-							"User authentication and authorization via Discord",
-							"Create, edit, and manage travel itineraries",
-							"Collaborative trip planning with notes and details",
-							"Responsive and accessible design with minimalist UI",
-							"Secure database storage for all user data",
-						].map((item, index) => (
+							"Real-time collaboration system for Unity game development teams",
+							"Asset locking mechanism to prevent conflicting changes",
+							"Commenting system for effective team communication",
+							"Firebase Realtime Database for instant synchronization",
+							"Firestore integration for reliable data persistence",
+							"Firebase Functions for serverless backend operations",
+							"Sentry integration for comprehensive error tracking",
+							"PostHog analytics for user behavior insights",
+							"Modern Next.js frontend with responsive design",
+						].map((item) => (
 							<motion.li
 								key={item}
-								custom={index}
+								custom={item}
 								variants={listAnimationVariants}
 								initial="offscreen"
 								whileInView="onscreen"
@@ -249,7 +247,7 @@ const TraPlaPage = () => {
 				<motion.section variants={variants} className="mt-16 space-y-4">
 					<motion.h2
 						variants={variants}
-						className="text-3xl font-semibold text-[#3a49ad]"
+						className="text-3xl font-semibold text-[#FF6B35]"
 					>
 						Tech Stack
 					</motion.h2>
@@ -269,7 +267,7 @@ const TraPlaPage = () => {
 								<div className="flex items-center gap-2">
 									{category.icons.map((Icon) => (
 										<Icon.icon
-											key={Icon.icon.toString()}
+											key={Icon.color}
 											className={`h-6 w-6 ${Icon.color} dark:opacity-90`}
 										/>
 									))}
@@ -289,7 +287,7 @@ const TraPlaPage = () => {
 							animate={{ opacity: 1 }}
 							exit={{ opacity: 0 }}
 							onClick={() => setSelectedImage(null)}
-							className="fixed inset-0 z-50 flex items-center justify-center bg-[#3a49ad]/80 p-4"
+							className="fixed inset-0 z-50 flex items-center justify-center bg-[#FF6B35]/80 p-4"
 						>
 							<motion.div
 								initial={{ scale: 0.9 }}
@@ -298,12 +296,12 @@ const TraPlaPage = () => {
 								className="relative h-auto max-h-[90vh] w-auto max-w-[90vw]"
 							>
 								<button
+									type="button"
 									onClick={(e) => {
 										e.stopPropagation();
 										setSelectedImage(null);
 									}}
 									className="absolute -right-4 -top-4 z-50 rounded-full bg-white p-2 dark:bg-gray-900"
-									type="button"
 								>
 									<X className="h-6 w-6" />
 								</button>
@@ -323,4 +321,4 @@ const TraPlaPage = () => {
 	);
 };
 
-export default TraPlaPage;
+export default QuillPage;
