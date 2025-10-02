@@ -22,6 +22,30 @@ interface WorkExperience {
 
 const workExperiences: WorkExperience[] = [
 	{
+		company: "Quill",
+		position: "Backend & Frontend Developer",
+		duration: "August 2025 - Present",
+		location: "Remote",
+		description: [
+			"Built comprehensive backend infrastructure using Firebase Realtime Database for live collaboration and Firestore for persistent data storage",
+			"Developed real-time collaboration features allowing Unity teams to lock assets, preventing conflicting changes during development",
+			"Implemented commenting and notes system that enables developers to write feedback directly in Unity with instant synchronization across all team members",
+			"Integrated Sentry for error tracking and PostHog for analytics, ensuring robust monitoring and valuable user insights",
+			"Created modern Next.js frontend providing responsive interface for managing collaboration workflows",
+		],
+		technologies: [
+			"Next.js",
+			"TypeScript",
+			"Node.js",
+			"Firebase",
+			"Firestore",
+			"Firebase Functions",
+			"Sentry",
+			"PostHog",
+			"Unity Integration",
+		],
+	},
+	{
 		company: "TheWidlarzGroup",
 		position: "React Native Developer",
 		duration: "May 2025 - Present",
@@ -144,7 +168,7 @@ const WorkExperience = () => {
 					transition={{ duration: 0.6 }}
 					className="text-center mb-12"
 				>
-					<h2 className="text-3xl sm:text-4xl font-bold mb-4">
+					<h2 className="text-3xl sm:text-4xl font-bold mb-4 text-[#57A464]">
 						Work Experience
 					</h2>
 					<p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -164,7 +188,7 @@ const WorkExperience = () => {
 							key={`${experience.company}-${experience.position}`}
 							variants={cardVariants}
 						>
-							<Card className="hover:shadow-lg transition-all duration-300 border-l-4 border-l-primary">
+							<Card className="hover:shadow-lg transition-all duration-300 border-l-4 border-l-[#57A464]">
 								<CardHeader>
 									<div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
 										<div className="flex-1">
@@ -174,7 +198,7 @@ const WorkExperience = () => {
 													<ExternalLink className="h-4 w-4 text-muted-foreground" />
 												)}
 											</CardTitle>
-											<CardDescription className="text-lg font-medium text-primary mt-1">
+											<CardDescription className="text-lg font-medium text-[#57A464] mt-1">
 												{experience.position}
 											</CardDescription>
 										</div>
@@ -197,7 +221,7 @@ const WorkExperience = () => {
 												key={item.substring(0, 30)}
 												className="flex items-start gap-2"
 											>
-												<span className="text-primary font-bold mt-1">•</span>
+												<span className="text-[#57A464] font-bold mt-1">•</span>
 												<span className="text-muted-foreground">{item}</span>
 											</li>
 										))}
@@ -207,7 +231,7 @@ const WorkExperience = () => {
 											{experience.technologies.map((tech) => (
 												<span
 													key={tech}
-													className="px-3 py-1 bg-secondary text-secondary-foreground rounded-full text-sm font-medium"
+													className="px-3 py-1 bg-[#57A464]/10 text-[#57A464] border border-[#57A464]/20 rounded-full text-sm font-medium"
 												>
 													{tech}
 												</span>

@@ -5,7 +5,6 @@ import Hero from "@/components/Hero";
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import WorkExperience from "@/components/WorkExperience";
 import MyProjects from "@/components/MyProjects";
-import SkillsAndCertificates from "@/components/SkillsAndCertificates";
 import Technologies from "@/components/Technologies";
 
 // Motion for animations
@@ -27,7 +26,6 @@ export default function Home() {
 				<Technologies />
 			</MaxWidthWrapper>
 			<MyProjects />
-			<SkillsAndCertificates />
 		</motion.div>
 	);
 }
